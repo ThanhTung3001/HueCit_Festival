@@ -1,4 +1,4 @@
-package com.huefestival.app
+package com.huecit.festival
 
 import io.flutter.embedding.android.FlutterActivity
 
