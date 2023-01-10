@@ -53,7 +53,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       case Style.bgOutlineGray200:
         return Container(
           height: getVerticalSize(
-            64.00,
+            128.00,
           ),
           width: size.width,
           decoration: BoxDecoration(
@@ -71,7 +71,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       case Style.bgGradientBlack90099Black90000:
         return Container(
           height: getVerticalSize(
-            48.00,
+            128.00,
           ),
           width: size.width,
           decoration: BoxDecoration(
@@ -94,7 +94,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       case Style.bgFillWhiteA700:
         return Container(
           height: getVerticalSize(
-            64.00,
+            128.00,
           ),
           width: size.width,
           decoration: BoxDecoration(

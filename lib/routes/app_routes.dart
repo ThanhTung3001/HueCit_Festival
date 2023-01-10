@@ -16,8 +16,6 @@ import 'package:hue_festival/presentation/typicalfestival_screen/typicalfestival
 import 'package:hue_festival/presentation/typicalfestival_screen/binding/typicalfestival_binding.dart';
 import 'package:hue_festival/presentation/festival_listfestival_category_screen/festival_listfestival_category_screen.dart';
 import 'package:hue_festival/presentation/festival_listfestival_category_screen/binding/festival_listfestival_category_binding.dart';
-import 'package:hue_festival/presentation/festival_listfestival_category_traditionalfestival_screen/festival_listfestival_category_traditionalfestival_screen.dart';
-import 'package:hue_festival/presentation/festival_listfestival_category_traditionalfestival_screen/binding/festival_listfestival_category_traditionalfestival_binding.dart';
 import 'package:hue_festival/presentation/festival_listfestival_details_screen/festival_listfestival_details_screen.dart';
 import 'package:hue_festival/presentation/festival_listfestival_details_screen/binding/festival_listfestival_details_binding.dart';
 import 'package:hue_festival/presentation/library_picture_details_screen/library_picture_details_screen.dart';
@@ -160,9 +158,9 @@ class AppRoutes {
     ),
     GetPage(
       name: festivalListfestivalCategoryTraditionalfestivalScreen,
-      page: () => FestivalListfestivalCategoryTraditionalfestivalScreen(),
+      page: () => FestivalListfestivalCategoryScreen(),
       bindings: [
-        FestivalListfestivalCategoryTraditionalfestivalBinding(),
+        FestivalListfestivalCategoryBinding(),
       ],
     ),
     GetPage(

@@ -10,30 +10,28 @@ import 'package:hue_festival/widgets/custom_bottom_bar.dart';
 class HomeContainerScreen extends GetWidget<HomeContainerController> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: ColorConstant.whiteA700,
-            body: Navigator(
-                key: Get.nestedKey(1),
-                initialRoute: AppRoutes.homePage,
-                onGenerateRoute: (routeSetting) => GetPageRoute(
-                    page: () => getCurrentPage(routeSetting.name!),
-                    transition: Transition.noTransition)),
-            bottomNavigationBar:
-                CustomBottomBar(onChanged: (BottomBarEnum type) {
-              Get.toNamed(getCurrentRoute(type), id: 1);
-            })));
+    return Scaffold(
+        backgroundColor: ColorConstant.whiteA700,
+        body: Navigator(
+            key: Get.nestedKey(1),
+            initialRoute: AppRoutes.homePage,
+            onGenerateRoute: (routeSetting) => GetPageRoute(
+                page: () => getCurrentPage(routeSetting.name!),
+                transition: Transition.noTransition)),
+        bottomNavigationBar: CustomBottomBar(onChanged: (BottomBarEnum type) {
+          Get.toNamed(getCurrentRoute(type), id: 1);
+        }));
   }
 
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.Trangch:
+      case BottomBarEnum.HomePage:
         return AppRoutes.homePage;
-      case BottomBarEnum.Tintc:
+      case BottomBarEnum.NewPage:
         return AppRoutes.newsPage;
-      case BottomBarEnum.Lhi:
+      case BottomBarEnum.FestivalPage:
         return AppRoutes.festivalPage;
-      case BottomBarEnum.Thvin:
+      case BottomBarEnum.LibraryPage:
         return AppRoutes.libraryPictureTabContainerPage;
       default:
         return "/";

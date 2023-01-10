@@ -13,7 +13,9 @@ class Listanh2ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      //height: 130,
+      width: Get.width,
       padding: getPadding(
         top: 7.595001,
         bottom: 7.595001,
@@ -50,7 +52,8 @@ class Listanh2ItemWidget extends StatelessWidget {
                   ),
                   child: Text(
                     "msg_wellness_festival".tr,
-                    maxLines: null,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     style: AppStyle.txtSFProMedium16.copyWith(
                       height: 1.50,

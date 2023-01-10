@@ -7,6 +7,7 @@ dependencies:
   flutter: 
     sdk: flutter
   get: ^4.6.5
+  flutter_easyloading: ^3.0.5
   connectivity_plus: ^2.3.6
   shared_preferences: ^2.0.15
   cached_network_image: ^3.2.1
@@ -16,6 +17,12 @@ dependencies:
   intl: ^0.17.0
   permission_handler: ^10.0.0
   images_picker: ^1.2.11
+  group_button: ^5.2.2
+  video_player: ^2.4.10
+  video_viewer: ^1.2.7
+  cached_video_player: ^2.0.3
+  
+
 dev_dependencies: 
   flutter_test: 
     sdk: flutter

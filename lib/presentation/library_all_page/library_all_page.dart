@@ -12,25 +12,24 @@ class LibraryAllPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: Obx(() => GridView.builder(
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisExtent: getVerticalSize(104.00),
-                    crossAxisCount: 3,
-                    mainAxisSpacing: getHorizontalSize(16.00),
-                    crossAxisSpacing: getHorizontalSize(16.00)),
-                physics: BouncingScrollPhysics(),
-                itemCount: controller
-                    .libraryAllModelObj.value.libraryAllItemList.length,
-                itemBuilder: (context, index) {
-                  LibraryAllItemModel model = controller
-                      .libraryAllModelObj.value.libraryAllItemList[index];
-                  return LibraryAllItemWidget(model,
-                      onTapImgImage: onTapImgImage);
-                }))));
+    return Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Obx(() => GridView.builder(
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisExtent: getVerticalSize(104.00),
+                crossAxisCount: 3,
+                mainAxisSpacing: getHorizontalSize(16.00),
+                crossAxisSpacing: getHorizontalSize(16.00)),
+            physics: BouncingScrollPhysics(),
+            itemCount: controller
+                .libraryAllModelObj.value.libraryAllItemList.length,
+            itemBuilder: (context, index) {
+              LibraryAllItemModel model = controller
+                  .libraryAllModelObj.value.libraryAllItemList[index];
+              return LibraryAllItemWidget(model,
+                  onTapImgImage: onTapImgImage);
+            })));
   }
 
   onTapImgImage() {

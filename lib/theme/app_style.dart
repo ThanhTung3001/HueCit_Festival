@@ -26,7 +26,7 @@ class AppStyle {
       12,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProRegular14Black90066 = TextStyle(
@@ -53,7 +53,7 @@ class AppStyle {
       14,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProBold26 = TextStyle(
@@ -89,7 +89,7 @@ class AppStyle {
       16,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtRobotoRegular20 = TextStyle(
@@ -116,7 +116,7 @@ class AppStyle {
       16,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProMedium16WhiteA700 = TextStyle(
@@ -125,7 +125,7 @@ class AppStyle {
       16,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProRegular16 = TextStyle(
@@ -143,7 +143,7 @@ class AppStyle {
       14,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProRegular14 = TextStyle(
@@ -161,7 +161,7 @@ class AppStyle {
       16,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProRegularItalic16 = TextStyle(
@@ -179,7 +179,7 @@ class AppStyle {
       12,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProRegular12 = TextStyle(
@@ -206,7 +206,7 @@ class AppStyle {
       16,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProRegular14WhiteA700 = TextStyle(
@@ -242,7 +242,7 @@ class AppStyle {
       14,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProBold16Gray900 = TextStyle(
@@ -269,7 +269,7 @@ class AppStyle {
       12,
     ),
     fontFamily: 'SF Pro',
-    fontWeight: FontWeight.w510,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtSFProBold16Gray90001 = TextStyle(

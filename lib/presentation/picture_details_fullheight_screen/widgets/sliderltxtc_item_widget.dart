@@ -55,7 +55,7 @@ class SliderltxtcItemWidget extends StatelessWidget {
                       14,
                     ),
                     fontFamily: 'SF Pro',
-                    fontWeight: FontWeight.w510,
+                    fontWeight: FontWeight.w500,
                     height: 1.43,
                   ),
                 ),

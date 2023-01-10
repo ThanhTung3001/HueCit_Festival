@@ -8,34 +8,32 @@ class FileManager {
       List<String> allowedExtensions = const [],
       void Function(List<String?>)? getImages}) async {
     await Get.bottomSheet(
-        SafeArea(
-          child: Wrap(
-            children: <Widget>[
-              ListTile(
-                  leading: const Icon(Icons.photo_library),
-                  title: const Text('Gallery'),
-                  onTap: () async {
-                    List<String?> imageList =
-                        await _imgFromGallery(maxFileSize, allowedExtensions);
-                    if (getImages != null) {
-                      getImages(imageList);
-                    }
-                    Get.back();
-                  }),
-              ListTile(
-                leading: const Icon(Icons.photo_camera),
-                title: const Text('Camera'),
+        Wrap(
+          children: <Widget>[
+            ListTile(
+                leading: const Icon(Icons.photo_library),
+                title: const Text('Gallery'),
                 onTap: () async {
                   List<String?> imageList =
-                      await _imgFromCamera(maxFileSize, allowedExtensions);
+                      await _imgFromGallery(maxFileSize, allowedExtensions);
                   if (getImages != null) {
                     getImages(imageList);
                   }
                   Get.back();
-                },
-              ),
-            ],
-          ),
+                }),
+            ListTile(
+              leading: const Icon(Icons.photo_camera),
+              title: const Text('Camera'),
+              onTap: () async {
+                List<String?> imageList =
+                    await _imgFromCamera(maxFileSize, allowedExtensions);
+                if (getImages != null) {
+                  getImages(imageList);
+                }
+                Get.back();
+              },
+            ),
+          ],
         ),
         backgroundColor: Colors.white);
   }

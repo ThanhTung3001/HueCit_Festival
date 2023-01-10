@@ -10,22 +10,22 @@ class CustomBottomBar extends StatelessWidget {
     BottomMenuModel(
       icon: ImageConstant.imgHome,
       title: "lbl_trang_ch".tr,
-      type: BottomBarEnum.Trangch,
+      type: BottomBarEnum.HomePage,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgMenu,
       title: "lbl_tin_t_c".tr,
-      type: BottomBarEnum.Tintc,
+      type: BottomBarEnum.NewPage,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgSettings,
       title: "lbl_l_h_i".tr,
-      type: BottomBarEnum.Lhi,
+      type: BottomBarEnum.FestivalPage,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgVideolibrary1,
       title: "lbl_th_vi_n".tr,
-      type: BottomBarEnum.Thvin,
+      type: BottomBarEnum.LibraryPage,
     )
   ];
 
@@ -131,10 +131,10 @@ class CustomBottomBar extends StatelessWidget {
 }
 
 enum BottomBarEnum {
-  Trangch,
-  Tintc,
-  Lhi,
-  Thvin,
+  HomePage,
+  NewPage,
+  FestivalPage,
+  LibraryPage,
 }
 
 class BottomMenuModel {

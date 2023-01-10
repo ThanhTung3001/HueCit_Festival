@@ -170,7 +170,7 @@ class CustomButton extends StatelessWidget {
             16,
           ),
           fontFamily: 'SF Pro',
-          fontWeight: FontWeight.w510,
+          fontWeight: FontWeight.w500,
         );
       case ButtonFontStyle.SFProMedium12:
         return TextStyle(
@@ -179,7 +179,7 @@ class CustomButton extends StatelessWidget {
             12,
           ),
           fontFamily: 'SF Pro',
-          fontWeight: FontWeight.w510,
+          fontWeight: FontWeight.w500,
         );
       default:
         return TextStyle(
