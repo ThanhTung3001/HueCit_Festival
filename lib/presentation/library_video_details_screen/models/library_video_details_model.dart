@@ -1,10 +1,53 @@
-import 'package:video_viewer/video_viewer.dart';
+import 'dart:io';
+
+import 'package:cached_video_player/cached_video_player.dart';
+import 'package:video_compress/video_compress.dart';
 
 class LibraryVideoDetailsModel {
-  VideoPlayerController controller = VideoPlayerController.network(
-      "https://v16-webapp.tiktok.com/50c86772796db88b87c77634b8584677/63bda9e7/video/tos/useast2a/tos-useast2a-pve-0037-aiso/og5d3gfeQaJcFtOJYSAAoutxe43rNae1eIKs44/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C1%7C0&cv=1&br=3078&bt=1539&cs=0&ds=3&ft=4b~OyM3a8Zmo05WHW64jVMaBPpWrKsdm&mime_type=video_mp4&qs=0&rc=NDlmM2llO2U3OGU7NmRnaEBpaml5ZDc6ZmV5aDMzZjgzM0BfMWAxYC0wNjExLzMtLzVhYSMzY3BwcjRfMHFgLS1kL2Nzcw%3D%3D&l=20230110120925FAF30BE3E2C2942A1815&btag=80000");
+  String title = "";
+  LibraryVideoDetailsModel({required this.controller});
+  CachedVideoPlayerController controller = CachedVideoPlayerController.network(
+      "https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_30mb.mp4");
+  int currentTime = 0;
+  int totalTime = 0;
 }
 
 class DataVideoPlay {
-  var listVideo = List.filled(10, LibraryVideoDetailsModel());
+  var listVideos = [];
+  init() async {
+    listVideos = url.map((e) async {
+      return await GetControllerByUrl(e);
+    }).toList();
+  }
+
+  var url = [
+    "https://player.vimeo.com/external/371817283.sd.mp4?s=56639e00db07ad3f26d837314e3da531bad01b1b&profile_id=164&oauth2_token_id=57447761",
+    "https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_30mb.mp4",
+    "https://player.vimeo.com/external/371817283.sd.mp4?s=56639e00db07ad3f26d837314e3da531bad01b1b&profile_id=164&oauth2_token_id=57447761"
+  ];
+
+  var listVideo = [
+    LibraryVideoDetailsModel(
+        controller: CachedVideoPlayerController.network(
+            "https://player.vimeo.com/external/371817283.sd.mp4?s=56639e00db07ad3f26d837314e3da531bad01b1b&profile_id=164&oauth2_token_id=57447761")),
+    LibraryVideoDetailsModel(
+      controller: CachedVideoPlayerController.network(
+          "https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_30mb.mp4"),
+    ),
+    LibraryVideoDetailsModel(
+        controller: CachedVideoPlayerController.network(
+            "https://player.vimeo.com/external/371817283.sd.mp4?s=56639e00db07ad3f26d837314e3da531bad01b1b&profile_id=164&oauth2_token_id=57447761"))
+  ];
+
+  // ignore: non_constant_identifier_names
+  Future<CachedVideoPlayerController> GetControllerByUrl(String path) async {
+    await VideoCompress.deleteAllCache();
+    MediaInfo? mediaInfo = await VideoCompress.compressVideo(path,
+        quality: VideoQuality.LowQuality);
+    print(mediaInfo!.filesize.toString());
+    File? file = mediaInfo.file;
+    CachedVideoPlayerController controller =
+        CachedVideoPlayerController.file(file!);
+    return controller;
+  }
 }
