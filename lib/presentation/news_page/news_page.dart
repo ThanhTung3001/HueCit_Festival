@@ -21,7 +21,9 @@ class NewsPage extends StatelessWidget {
         appBar: CustomAppBar(
             height: getVerticalSize(64.00),
             title: AppbarTitle(
-                text: "msg_tin_t_c_s_ki_n".tr, margin: getMargin(left: 16)),
+                text: "msg_tin_t_c_s_ki_n".tr,
+                margin: getMargin(left: 16),
+                onTap: () {}),
             actions: [
               AppbarImage(
                   height: getSize(48.00),
@@ -41,8 +43,7 @@ class NewsPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("msg_tin_t_c_s_ki_n2".tr,
                                     overflow: TextOverflow.ellipsis,
@@ -69,8 +70,7 @@ class NewsPage extends StatelessWidget {
                                   alignment: Alignment.topLeft,
                                   children: [
                                     CustomImageView(
-                                        imagePath:
-                                            ImageConstant.imgAnh80x120,
+                                        imagePath: ImageConstant.imgAnh80x120,
                                         height: getVerticalSize(193.00),
                                         width: getHorizontalSize(343.00),
                                         radius: BorderRadius.circular(
@@ -85,18 +85,15 @@ class NewsPage extends StatelessWidget {
                                             padding:
                                                 getPadding(left: 8, top: 8),
                                             child: Column(
-                                                mainAxisSize:
-                                                    MainAxisSize.min,
+                                                mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment
-                                                        .start,
+                                                    CrossAxisAlignment.start,
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
                                                   Container(
-                                                      width:
-                                                          getHorizontalSize(
-                                                              45.00),
+                                                      width: getHorizontalSize(
+                                                          45.00),
                                                       padding: getPadding(
                                                           left: 4,
                                                           top: 5,
@@ -110,8 +107,7 @@ class NewsPage extends StatelessWidget {
                                                                       .roundedBorder6),
                                                       child: Column(
                                                           mainAxisSize:
-                                                              MainAxisSize
-                                                                  .min,
+                                                              MainAxisSize.min,
                                                           crossAxisAlignment:
                                                               CrossAxisAlignment
                                                                   .start,
@@ -125,8 +121,7 @@ class NewsPage extends StatelessWidget {
                                                                         left:
                                                                             8),
                                                                 child: Text(
-                                                                    "lbl_01"
-                                                                        .tr,
+                                                                    "lbl_01".tr,
                                                                     overflow:
                                                                         TextOverflow
                                                                             .ellipsis,
@@ -135,12 +130,13 @@ class NewsPage extends StatelessWidget {
                                                                             .left,
                                                                     style: AppStyle
                                                                         .txtSFProBold16Red900
-                                                                        .copyWith(height: 1.25))),
+                                                                        .copyWith(
+                                                                            height:
+                                                                                1.25))),
                                                             Padding(
                                                                 padding:
                                                                     getPadding(
-                                                                        top:
-                                                                            1),
+                                                                        top: 1),
                                                                 child: Text(
                                                                     "lbl_11_2022"
                                                                         .tr,
@@ -152,20 +148,20 @@ class NewsPage extends StatelessWidget {
                                                                             .left,
                                                                     style: AppStyle
                                                                         .txtSFProRegular10
-                                                                        .copyWith(height: 1.20)))
+                                                                        .copyWith(
+                                                                            height:
+                                                                                1.20)))
                                                           ])),
                                                   Padding(
-                                                      padding: getPadding(
-                                                          top: 104),
+                                                      padding:
+                                                          getPadding(top: 104),
                                                       child: Text(
                                                           "msg_m_t_s_l_h_i_d_n"
                                                               .tr,
-                                                          overflow:
-                                                              TextOverflow
-                                                                  .ellipsis,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                           textAlign:
-                                                              TextAlign
-                                                                  .left,
+                                                              TextAlign.left,
                                                           style: AppStyle
                                                               .txtSFProBold16WhiteA700
                                                               .copyWith(
@@ -203,16 +199,13 @@ class NewsPage extends StatelessWidget {
                                           onTapTxtXemthm1();
                                         },
                                         child: Padding(
-                                            padding: getPadding(
-                                                top: 1, bottom: 3),
+                                            padding:
+                                                getPadding(top: 1, bottom: 3),
                                             child: Text("lbl_xem_th_m".tr,
-                                                overflow:
-                                                    TextOverflow.ellipsis,
+                                                overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.left,
-                                                style: AppStyle
-                                                    .txtSFProMedium12
-                                                    .copyWith(
-                                                        height: 1.25))))
+                                                style: AppStyle.txtSFProMedium12
+                                                    .copyWith(height: 1.25))))
                                   ])),
                           Padding(
                               padding: getPadding(top: 17),
@@ -222,9 +215,10 @@ class NewsPage extends StatelessWidget {
                                   itemCount: controller.newsModelObj.value
                                       .listthirtyone1ItemList.length,
                                   itemBuilder: (context, index) {
-                                    Listthirtyone1ItemModel model =
-                                        controller.newsModelObj.value
-                                            .listthirtyone1ItemList[index];
+                                    Listthirtyone1ItemModel model = controller
+                                        .newsModelObj
+                                        .value
+                                        .listthirtyone1ItemList[index];
                                     return Listthirtyone1ItemWidget(model,
                                         onTapCard: onTapCard);
                                   })))

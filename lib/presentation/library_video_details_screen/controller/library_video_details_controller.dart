@@ -42,6 +42,7 @@ class LibraryVideoDetailsController extends GetxController {
 
   changeVideo(int index) async {
     timeCurrent(0);
+    print(timeCurrent);
     var controller =
         libraryVideoDetailsModelObj.value.listVideo[index].controller;
     if (controller.value.isInitialized) {
@@ -61,10 +62,10 @@ class LibraryVideoDetailsController extends GetxController {
   }
 
   stock(index, double value) {
-    print(value);
+    //print(value);
     var video = libraryVideoDetailsModelObj.value.listVideo[index];
     var timeCurrentStock = Duration(seconds: (value * video.totalTime) ~/ 100);
-    print(video.totalTime);
+    //print(video.totalTime);
     libraryVideoDetailsModelObj.value.listVideo[index].currentTime =
         timeCurrentStock.inSeconds;
     video.controller.seekTo(timeCurrentStock);
@@ -110,5 +111,8 @@ class LibraryVideoDetailsController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+    libraryVideoDetailsModelObj.value.listVideo.forEach((e) {
+      e.controller.dispose();
+    });
   }
 }

@@ -37,22 +37,28 @@ class FestivalListfestivalCategoryScreen
                           Container(
                               height: getVerticalSize(40.00),
                               width: getHorizontalSize(359.00),
-                              decoration: AppDecoration.fillWhiteA700,
+                              color: Colors.white,
                               child: Stack(
                                   alignment: Alignment.centerRight,
                                   children: [
                                     Align(
-                                        alignment: Alignment.center,
-                                        child: SingleChildScrollView(
-                                          scrollDirection: Axis.horizontal,
-                                          child: GroupButton(
-                                            isRadio: false,
+                                      alignment: Alignment.center,
+                                      child: SingleChildScrollView(
+                                        physics: BouncingScrollPhysics(),
+                                        scrollDirection: Axis.horizontal,
+                                        child: Obx(() {
+                                          return GroupButton(
+                                            //enableDeselect: false,
+                                            isRadio: true,
                                             onSelected:
                                                 (data, index, isSelected) {
                                               print(data);
                                             },
+                                            controller: controller
+                                                .controllerButton.value,
                                             options: GroupButtonOptions(
                                                 // elevation: 0,
+
                                                 groupingType: GroupingType.row,
                                                 borderRadius:
                                                     BorderRadius.circular(32),
@@ -68,8 +74,10 @@ class FestivalListfestivalCategoryScreen
                                               "Lễ hội truyền thống",
                                               "Lễ hội văn hóa",
                                             ],
-                                          ),
-                                        )),
+                                          );
+                                        }),
+                                      ),
+                                    )
                                   ])),
                           Padding(
                               padding: getPadding(top: 36),

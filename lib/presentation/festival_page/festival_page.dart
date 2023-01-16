@@ -21,8 +21,11 @@ class FestivalPage extends StatelessWidget {
         backgroundColor: ColorConstant.whiteA700,
         appBar: CustomAppBar(
             height: getVerticalSize(64.00),
-            title:
-                AppbarTitle(text: "lbl_l_h_i".tr, margin: getMargin(left: 16)),
+            title: AppbarTitle(
+              text: "lbl_l_h_i".tr,
+              margin: getMargin(left: 16),
+              onTap: () {},
+            ),
             actions: [
               AppbarImage(
                   height: getSize(48.00),

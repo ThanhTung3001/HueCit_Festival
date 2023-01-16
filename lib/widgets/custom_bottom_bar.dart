@@ -60,15 +60,18 @@ class CustomBottomBar extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  CustomImageView(
-                    svgPath: bottomMenuList[index].icon,
-                    height: getSize(
-                      24.00,
+                  Opacity(
+                    opacity: 0.4,
+                    child: CustomImageView(
+                      svgPath: bottomMenuList[index].icon,
+                      height: getSize(
+                        24.00,
+                      ),
+                      width: getSize(
+                        24.00,
+                      ),
+                      color: ColorConstant.black900,
                     ),
-                    width: getSize(
-                      24.00,
-                    ),
-                    color: ColorConstant.black900,
                   ),
                   Padding(
                     padding: getPadding(

@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_slider.dart';
+
 import '../home_page/widgets/listanh_four_item_widget.dart';
 import '../home_page/widgets/listeightytwo_item_widget.dart';
 import '../home_page/widgets/listthirtyone_item_widget.dart';
@@ -29,7 +31,9 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       AppbarTitle(
-                          text: "lbl_xin_ch_o".tr, margin: getMargin(right: 8)),
+                          text: "lbl_xin_ch_o".tr,
+                          margin: getMargin(right: 8),
+                          onTap: () {}),
                       Padding(
                           padding: getPadding(top: 4),
                           child: Row(children: [
@@ -114,14 +118,16 @@ class HomePage extends StatelessWidget {
                           Align(
                               alignment: Alignment.centerRight,
                               child: Container(
-                                  height: getVerticalSize(314.00),
-                                  child: Obx(() => ListView.builder(
-                                      padding: getPadding(top: 17),
-                                      scrollDirection: Axis.horizontal,
-                                      physics: BouncingScrollPhysics(),
+                                  height: getVerticalSize(300.00),
+                                  child: Obx(() => CarouselSlider.builder(
+                                      options: CarouselOptions(
+                                        viewportFraction: 0.95,
+                                        aspectRatio: 2.0,
+                                        height: 315,
+                                      ),
                                       itemCount: controller.homeModelObj.value
                                           .listthirtyoneItemList.length,
-                                      itemBuilder: (context, index) {
+                                      itemBuilder: (context, index, value) {
                                         ListthirtyoneItemModel model =
                                             controller.homeModelObj.value
                                                 .listthirtyoneItemList[index];

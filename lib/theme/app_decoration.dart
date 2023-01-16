@@ -87,16 +87,16 @@ class AppDecoration {
         ),
         boxShadow: [
           BoxShadow(
-            color: ColorConstant.black9001e,
+            color: Colors.black.withOpacity(0.12),
             spreadRadius: getHorizontalSize(
-              2.00,
+              1.00,
             ),
             blurRadius: getHorizontalSize(
-              2.00,
+              3.00,
             ),
             offset: Offset(
-              4,
-              4,
+              2,
+              2,
             ),
           ),
         ],

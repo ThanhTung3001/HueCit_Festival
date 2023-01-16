@@ -132,7 +132,7 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                   padding: getPadding(
                     left: 16,
                     top: 6,
-                    bottom: 41,
+                    bottom: 20,
                   ),
                   child: Row(
                     children: [
