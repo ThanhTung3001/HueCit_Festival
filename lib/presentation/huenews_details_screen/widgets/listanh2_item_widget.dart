@@ -17,11 +17,10 @@ class Listanh2ItemWidget extends StatelessWidget {
       //height: 130,
       width: Get.width,
       padding: getPadding(
-        top: 7.595001,
-        bottom: 7.595001,
+        bottom: 16
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImageView(
@@ -38,6 +37,7 @@ class Listanh2ItemWidget extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(width: 12,),
           Padding(
             padding: getPadding(
               bottom: 8,

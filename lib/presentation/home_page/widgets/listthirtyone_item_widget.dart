@@ -23,9 +23,14 @@ class ListthirtyoneItemWidget extends StatelessWidget {
             onTapCard!();
           },
           child: Container(
+           // color: Colors.red,
+            padding: EdgeInsets.zero,
             margin: getMargin(
-              right: 16,
+              right: 10,
+              left: 6
             ),
+            width: Get.width,
+            height: 300,
             decoration: AppDecoration.outlineGray200.copyWith(
               borderRadius: BorderRadiusStyle.roundedBorder12,
             ),
@@ -35,37 +40,39 @@ class ListthirtyoneItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
+                  //color: Colors.red,
                   height: getVerticalSize(
                     193.00,
                   ),
-                  width: getHorizontalSize(
-                    335.00,
-                  ),
+                 // width: Get.width*0.6,
                   child: Stack(
-                    alignment: Alignment.topLeft,
+                    //alignment: Alignment.topLeft,
                     children: [
-                      CustomImageView(
-                        fit:BoxFit.cover,
-                        imagePath: ImageConstant.imgImage,
-                        height: getVerticalSize(
-                          193.00,
-                        ),
-                        // width: getHorizontalSize(
-                        //   335.00,
-                        // ),
-                        radius: BorderRadius.only(
-                          topLeft: Radius.circular(
-                            getHorizontalSize(
-                              12.00,
+                      Positioned.fill(
+                        child: CustomImageView(
+                          width: Get.width,
+                          fit:BoxFit.cover,
+                          imagePath: ImageConstant.imgImage,
+                          height: getVerticalSize(
+                            193.00,
+                          ),
+                          // width: getHorizontalSize(
+                          //   335.00,
+                          // ),
+                          radius: BorderRadius.only(
+                            topLeft: Radius.circular(
+                              getHorizontalSize(
+                                12.00,
+                              ),
+                            ),
+                            topRight: Radius.circular(
+                              getHorizontalSize(
+                                12.00,
+                              ),
                             ),
                           ),
-                          topRight: Radius.circular(
-                            getHorizontalSize(
-                              12.00,
-                            ),
-                          ),
+                          alignment: Alignment.center,
                         ),
-                        alignment: Alignment.center,
                       ),
                       Align(
                         alignment: Alignment.topLeft,
@@ -97,7 +104,7 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                               ),
                               Padding(
                                 padding: getPadding(
-                                  top: 1,
+                                 top: 4,
                                 ),
                                 child: Text(
                                   "lbl_12_2022".tr,
@@ -118,7 +125,7 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                 Padding(
                   padding: getPadding(
                     left: 16,
-                    top: 19,
+                    top: 16,
                   ),
                   child: Text(
                     "msg_ch_ng_tr_nh_countdown".tr,
@@ -132,8 +139,9 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                 Padding(
                   padding: getPadding(
                     left: 16,
-                    top: 6,
-                    bottom: 20,
+                    top: 8,
+                    bottom: 16,
+                    right: 16
                   ),
                   child: Row(
                     children: [

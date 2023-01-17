@@ -53,6 +53,10 @@ class LibraryPictureTabContainerPage extends StatelessWidget {
                         Tab(text: "lbl_h_nh_nh".tr),
                         Tab(text: "lbl_video".tr)
                       ],
+                      labelStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
                       labelColor: ColorConstant.red900,
                       unselectedLabelColor: ColorConstant.black90066,
                       indicator: BoxDecoration(
@@ -61,8 +65,8 @@ class LibraryPictureTabContainerPage extends StatelessWidget {
                                   color: ColorConstant.red900,
                                   width: getHorizontalSize(2.00)))))),
               Container(
-                  margin: getMargin(left: 16, top: 20, right: 16, bottom: 5),
-                  height: getVerticalSize(460.00),
+                  margin: getMargin(left: 16, top: 20, right: 16, bottom: 16),
+                  height: 581,
                   child: TabBarView(
                       controller: controller.navtabController,
                       children: [

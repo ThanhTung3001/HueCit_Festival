@@ -15,7 +15,7 @@ class LibraryAllPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.transparent,
         body: Obx(() => GridView.builder(
-            shrinkWrap: true,
+            shrinkWrap: false,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisExtent: getVerticalSize(104.00),
                 crossAxisCount: 3,

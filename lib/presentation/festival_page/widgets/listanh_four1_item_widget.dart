@@ -17,11 +17,12 @@ class ListanhFour1ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: getPadding(
-        top: 8.8099975,
-        bottom: 8.8099975,
+       // top: 8.8099975,
+      //  bottom: 8.8099975,
+        bottom: 16
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(
             onTap: () {
@@ -29,7 +30,7 @@ class ListanhFour1ItemWidget extends StatelessWidget {
             },
             child: Padding(
               padding: getPadding(
-                bottom: 1,
+               // bottom: 1,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,6 +67,7 @@ class ListanhFour1ItemWidget extends StatelessWidget {
               ),
             ),
           ),
+        SizedBox(width: 16,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,

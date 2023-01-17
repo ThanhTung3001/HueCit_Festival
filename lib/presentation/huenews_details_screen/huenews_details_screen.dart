@@ -50,7 +50,7 @@ class HuenewsDetailsScreen extends GetWidget<HuenewsDetailsController> {
                                           fontStyle:
                                               ButtonFontStyle.SFProMedium12),
                                       Padding(
-                                          padding: getPadding(top: 11),
+                                          padding: getPadding(top: 8),
                                           child: Text(
                                               "msg_ch_ng_tr_nh_countdown".tr,
                                               overflow: TextOverflow.ellipsis,
@@ -129,7 +129,7 @@ class HuenewsDetailsScreen extends GetWidget<HuenewsDetailsController> {
                                           ])),
                                       Container(
                                           width: getHorizontalSize(338.00),
-                                          margin: getMargin(top: 15),
+                                          margin: getMargin(top: 16),
                                           child: Text("msg_l_ch_ng_tr_nh".tr,
                                               maxLines: null,
                                               textAlign: TextAlign.left,
@@ -138,7 +138,7 @@ class HuenewsDetailsScreen extends GetWidget<HuenewsDetailsController> {
                                       Container(
                                           height: getVerticalSize(1.00),
                                           width: getHorizontalSize(343.00),
-                                          margin: getMargin(top: 14),
+                                          margin: getMargin(top: 16),
                                           decoration: BoxDecoration(
                                               color: ColorConstant.gray200)),
                                       Padding(

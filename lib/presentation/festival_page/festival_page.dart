@@ -39,70 +39,89 @@ class FestivalPage extends StatelessWidget {
             width: size.width,
             child: SingleChildScrollView(
                 child: Padding(
-                    padding: getPadding(left: 16, top: 20, bottom: 5),
+                    padding: getPadding(
+                      top: 20,
+                      bottom: 16,
+                    ),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          CustomImageView(
-                              imagePath: ImageConstant.imgImage193x343,
-                              height: getVerticalSize(193.00),
-                              width: getHorizontalSize(343.00),
-                              radius: BorderRadius.circular(
-                                  getHorizontalSize(12.00))),
-                          Padding(
-                              padding: getPadding(top: 14),
-                              child: Text("msg_l_h_i_t_nh_th_a".tr,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProBold16Gray90001
-                                      .copyWith(height: 1.25))),
                           Container(
-                              width: getHorizontalSize(338.00),
-                              margin: getMargin(top: 4),
-                              child: Text("msg_kh_ng_n_o_nhi_t".tr,
-                                  maxLines: null,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProRegular16
-                                      .copyWith(height: 1.50))),
-                          Padding(
-                              padding: getPadding(top: 8),
-                              child: Text("lbl_xem_th_m".tr,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProMedium12
-                                      .copyWith(height: 1.25))),
-                          Padding(
-                              padding: getPadding(top: 41, right: 16),
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("msg_l_h_i_ti_u_bi_u".tr,
+                            padding: getPadding(left: 16, right: 16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgImage193x343,
+
+                                    /// height: getVerticalSize(193.00),
+                                    // width: getHorizontalSize(343.00),
+                                    radius: BorderRadius.circular(
+                                        getHorizontalSize(12.00))),
+                                Padding(
+                                    padding: getPadding(top: 12),
+                                    child: Text("msg_l_h_i_t_nh_th_a".tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
-                                        style: AppStyle.txtSFProBold16
-                                            .copyWith(height: 1.25)),
-                                    GestureDetector(
-                                        onTap: () {
-                                          onTapTxtXemthm();
-                                        },
-                                        child: Padding(
-                                            padding:
-                                                getPadding(top: 1, bottom: 3),
-                                            child: Text("lbl_xem_th_m".tr,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.left,
-                                                style: AppStyle.txtSFProMedium12
-                                                    .copyWith(height: 1.25))))
-                                  ])),
+                                        style: AppStyle.txtSFProBold16Gray90001
+                                            .copyWith(height: 1.25))),
+                                Container(
+                                    //width: getHorizontalSize(338.00),
+                                    margin: getMargin(top: 4),
+                                    child: Text("msg_kh_ng_n_o_nhi_t".tr,
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: AppStyle.txtSFProRegular16
+                                            .copyWith(height: 1.50))),
+                                Padding(
+                                    padding: getPadding(top: 8, bottom: 4),
+                                    child: Text("lbl_xem_th_m".tr,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: AppStyle.txtSFProMedium12
+                                            .copyWith(height: 1.25))),
+                                Padding(
+                                    padding: getPadding(
+                                      top: 32,
+                                    ),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text("msg_l_h_i_ti_u_bi_u".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: AppStyle.txtSFProBold16
+                                                  .copyWith(height: 1.25)),
+                                          GestureDetector(
+                                              onTap: () {
+                                                onTapTxtXemthm();
+                                              },
+                                              child: Container(
+                                                  child: Text("lbl_xem_th_m".tr,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtSFProMedium12
+                                                          .copyWith(
+                                                              height: 1.25))))
+                                        ])),
+                              ],
+                            ),
+                          ),
                           SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
-                              padding: getPadding(top: 17),
+                              padding: getPadding(top: 16, left: 16, right: 16),
                               child: IntrinsicWidth(
+                                  //stepHeight:0,
                                   child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -111,7 +130,7 @@ class FestivalPage extends StatelessWidget {
                                           onTapTintuc();
                                         },
                                         child: Container(
-                                            margin: getMargin(bottom: 32),
+                                            // margin: getMargin(bottom: 32),
                                             decoration: AppDecoration
                                                 .fillWhiteA700
                                                 .copyWith(
@@ -138,7 +157,8 @@ class FestivalPage extends StatelessWidget {
                                                                   8.00))),
                                                   Padding(
                                                       padding: getPadding(
-                                                          top: 8, bottom: 3),
+                                                        top: 8,
+                                                      ),
                                                       child: Text(
                                                           "lbl_l_t_x_t_c".tr,
                                                           overflow: TextOverflow
@@ -152,11 +172,12 @@ class FestivalPage extends StatelessWidget {
                                                                       1.25)))
                                                 ]))),
                                     Container(
-                                        margin: getMargin(left: 16, bottom: 8),
+                                        margin: getMargin(left: 16, bottom: 0),
                                         decoration: AppDecoration.fillWhiteA700
                                             .copyWith(
-                                                borderRadius: BorderRadiusStyle
-                                                    .roundedBorder16),
+                                          borderRadius:
+                                              BorderRadiusStyle.roundedBorder16,
+                                        ),
                                         child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
@@ -174,13 +195,10 @@ class FestivalPage extends StatelessWidget {
                                                   radius: BorderRadius.circular(
                                                       getHorizontalSize(8.00))),
                                               Container(
-                                                  width:
-                                                      getHorizontalSize(119.00),
-                                                  margin: getMargin(
-                                                      top: 7, bottom: 1),
+                                                  margin: getMargin(top: 8),
                                                   child: Text(
                                                       "msg_l_h_i_i_n_h_n".tr,
-                                                      maxLines: null,
+                                                      maxLines: 2,
                                                       textAlign: TextAlign.left,
                                                       style: AppStyle
                                                           .txtSFProMedium16
@@ -188,99 +206,126 @@ class FestivalPage extends StatelessWidget {
                                                               height: 1.50)))
                                             ])),
                                     Container(
-                                        margin: getMargin(left: 16, bottom: 24),
+                                        margin: getMargin(left: 16, bottom: 0),
                                         decoration: AppDecoration.fillWhiteA700
                                             .copyWith(
-                                                borderRadius: BorderRadiusStyle
-                                                    .roundedBorder16),
+                                          borderRadius:
+                                              BorderRadiusStyle.roundedBorder16,
+                                        ),
                                         child: Column(
                                             mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.start,
+                                                MainAxisAlignment.center,
                                             children: [
                                               CustomImageView(
-                                                  imagePath:
-                                                      ImageConstant.imgAnh2,
+                                                  imagePath: ImageConstant
+                                                      .imgAnh100x160,
                                                   height:
                                                       getVerticalSize(100.00),
                                                   width:
                                                       getHorizontalSize(160.00),
                                                   radius: BorderRadius.circular(
                                                       getHorizontalSize(8.00))),
-                                              Padding(
-                                                  padding: getPadding(top: 16),
+                                              Container(
+                                                  margin: getMargin(top: 8),
                                                   child: Text(
-                                                      "lbl_l_h_i_c_u_ng".tr,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
+                                                      "msg_l_h_i_i_n_h_n".tr,
+                                                      maxLines: 2,
                                                       textAlign: TextAlign.left,
                                                       style: AppStyle
                                                           .txtSFProMedium16
                                                           .copyWith(
                                                               height: 1.50)))
-                                            ]))
+                                            ])),
                                   ]))),
-                          Padding(
-                              padding: getPadding(top: 33),
-                              child: Text("msg_lo_i_h_nh_l_h_i".tr,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProBold16
-                                      .copyWith(height: 1.25))),
-                          Padding(
-                              padding: getPadding(top: 17, right: 16),
-                              child: Obx(() => ListView.builder(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: controller.festivalModelObj.value
-                                      .listeightytwo1ItemList.length,
-                                  itemBuilder: (context, index) {
-                                    Listeightytwo1ItemModel model = controller
-                                        .festivalModelObj
-                                        .value
-                                        .listeightytwo1ItemList[index];
-                                    return Listeightytwo1ItemWidget(model,
-                                        onTapLoaihinh: onTapLoaihinh);
-                                  }))),
-                          Padding(
-                              padding: getPadding(top: 34, right: 16),
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("msg_danh_s_ch_l_h_i".tr,
+                          Container(
+                            padding: getPadding(left: 16, right: 16, top: 16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                    padding: getPadding(top: 16),
+                                    child: Text("msg_lo_i_h_nh_l_h_i".tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: AppStyle.txtSFProBold16
-                                            .copyWith(height: 1.25)),
-                                    GestureDetector(
-                                        onTap: () {
-                                          onTapTxtXemthm1();
+                                            .copyWith(height: 1.25))),
+                                Container(
+                                    padding: getPadding(top: 16),
+                                    child: Obx(
+                                      () => GridView.builder(
+                                        physics: NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        itemCount: controller
+                                            .festivalModelObj
+                                            .value
+                                            .listeightytwo1ItemList
+                                            .length,
+                                        itemBuilder: (context, index) {
+                                          Listeightytwo1ItemModel model =
+                                              controller.festivalModelObj.value
+                                                      .listeightytwo1ItemList[
+                                                  index];
+                                          return Listeightytwo1ItemWidget(model,
+                                              onTapLoaihinh: onTapLoaihinh);
                                         },
-                                        child: Padding(
-                                            padding:
-                                                getPadding(top: 1, bottom: 3),
-                                            child: Text("lbl_xem_th_m".tr,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.left,
-                                                style: AppStyle.txtSFProMedium12
-                                                    .copyWith(height: 1.25))))
-                                  ])),
-                          Padding(
-                              padding: getPadding(top: 17, right: 16),
-                              child: Obx(() => ListView.builder(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: controller.festivalModelObj.value
-                                      .listanhFour1ItemList.length,
-                                  itemBuilder: (context, index) {
-                                    ListanhFour1ItemModel model = controller
-                                        .festivalModelObj
-                                        .value
-                                        .listanhFour1ItemList[index];
-                                    return ListanhFour1ItemWidget(model,
-                                        onTapTintuc: onTapTintuc);
-                                  })))
+                                        gridDelegate:
+                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                                childAspectRatio: 1.4,
+                                                crossAxisSpacing: 16,
+                                                crossAxisCount: 2),
+                                      ),
+                                    )),
+                                Padding(
+                                    padding: getPadding(
+                                      top: 16,
+                                    ),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text("msg_danh_s_ch_l_h_i".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: AppStyle.txtSFProBold16
+                                                  .copyWith(height: 1.25)),
+                                          GestureDetector(
+                                              onTap: () {
+                                                onTapTxtXemthm1();
+                                              },
+                                              child: Padding(
+                                                  padding: getPadding(
+                                                      top: 1, bottom: 3),
+                                                  child: Text("lbl_xem_th_m".tr,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtSFProMedium12
+                                                          .copyWith(
+                                                              height: 1.25))))
+                                        ])),
+                                Padding(
+                                    padding: getPadding(top: 16, right: 0),
+                                    child: Obx(() => ListView.builder(
+                                        physics: NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        itemCount: controller.festivalModelObj
+                                            .value.listanhFour1ItemList.length,
+                                        itemBuilder: (context, index) {
+                                          ListanhFour1ItemModel model =
+                                              controller.festivalModelObj.value
+                                                  .listanhFour1ItemList[index];
+                                          return ListanhFour1ItemWidget(
+                                            model,
+                                            onTapTintuc: onTapTintuc,
+                                          );
+                                        })))
+                              ],
+                            ),
+                          )
                         ])))));
   }
 

@@ -70,9 +70,9 @@ class HuenewsScreen extends GetWidget<HuenewsController> {
                                                               45.00),
                                                       padding: getPadding(
                                                           left: 4,
-                                                          top: 5,
+                                                          top: 4,
                                                           right: 4,
-                                                          bottom: 5),
+                                                          bottom: 4),
                                                       decoration: AppDecoration
                                                           .fillWhiteA700b2
                                                           .copyWith(
@@ -111,7 +111,7 @@ class HuenewsScreen extends GetWidget<HuenewsController> {
                                                                 padding:
                                                                     getPadding(
                                                                         top:
-                                                                            1),
+                                                                            4),
                                                                 child: Text(
                                                                     "lbl_11_2022"
                                                                         .tr,
@@ -145,7 +145,7 @@ class HuenewsScreen extends GetWidget<HuenewsController> {
                                                 ])))
                                   ])),
                           Padding(
-                              padding: getPadding(top: 15, right: 5),
+                              padding: getPadding(top: 16, right: 5),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,

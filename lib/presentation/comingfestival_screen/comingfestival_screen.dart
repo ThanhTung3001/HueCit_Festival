@@ -44,7 +44,7 @@ class ComingfestivalScreen extends GetWidget<ComingfestivalController> {
                                   indicatorColor: ColorConstant.red900,
                                   labelStyle: TextStyle(
                                     color: ColorConstant.red900,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                   unselectedLabelColor:
                                       Color(0xff240507).withOpacity(0.4),
