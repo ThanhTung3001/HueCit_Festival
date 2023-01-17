@@ -38,7 +38,7 @@ class NewsPage extends StatelessWidget {
             child: SingleChildScrollView(
                 child: Padding(
                     padding:
-                        getPadding(left: 16, top: 23, right: 16, bottom: 5),
+                        getPadding(left: 16, top: 20, right: 16, bottom: 16),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -64,7 +64,7 @@ class NewsPage extends StatelessWidget {
                               ]),
                           Container(
                               height: getVerticalSize(193.00),
-                              width: getHorizontalSize(343.00),
+                            //  width: getHorizontalSize(343.00),
                               margin: getMargin(top: 16),
                               child: Stack(
                                   alignment: Alignment.topLeft,
@@ -96,9 +96,9 @@ class NewsPage extends StatelessWidget {
                                                           45.00),
                                                       padding: getPadding(
                                                           left: 4,
-                                                          top: 5,
+                                                          top: 4,
                                                           right: 4,
-                                                          bottom: 5),
+                                                          bottom: 4),
                                                       decoration: AppDecoration
                                                           .fillWhiteA700b2
                                                           .copyWith(
@@ -170,7 +170,7 @@ class NewsPage extends StatelessWidget {
                                                 ])))
                                   ])),
                           Padding(
-                              padding: getPadding(top: 15, right: 5),
+                              padding: getPadding(top: 16),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,
@@ -184,8 +184,9 @@ class NewsPage extends StatelessWidget {
                                     return ListanhItemWidget(model);
                                   }))),
                           Padding(
-                              padding: getPadding(top: 38),
+                              padding: getPadding(top: 16),
                               child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
@@ -208,7 +209,7 @@ class NewsPage extends StatelessWidget {
                                                     .copyWith(height: 1.25))))
                                   ])),
                           Padding(
-                              padding: getPadding(top: 17),
+                              padding: getPadding(top: 8),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,

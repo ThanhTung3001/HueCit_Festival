@@ -21,9 +21,9 @@ class ListanhFourItemWidget extends StatelessWidget {
       },
       child: Padding(
         padding: getPadding(
-          top: 7.555023,
-          right: 36,
-          bottom: 7.555023,
+          top: 0,
+          right: 16,
+          bottom:16,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class ListanhFourItemWidget extends StatelessWidget {
             Padding(
               padding: getPadding(
                 left: 12,
-                bottom: 8,
+            //    bottom: 8,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +66,7 @@ class ListanhFourItemWidget extends StatelessWidget {
                   ),
                   Padding(
                     padding: getPadding(
-                      top: 7,
+                      top: 4,
                     ),
                     child: Row(
                       children: [
@@ -82,7 +82,7 @@ class ListanhFourItemWidget extends StatelessWidget {
                             bottom: 1,
                           ),
                         ),
-                        Padding(
+                        Container(
                           padding: getPadding(
                             left: 4,
                           ),

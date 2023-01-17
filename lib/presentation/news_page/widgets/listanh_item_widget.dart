@@ -13,14 +13,10 @@ class ListanhItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: getPadding(
-        top: 7.595009,
-        right: 2,
-        bottom: 7.595009,
-      ),
+    return Container(
+      margin: getMargin(bottom: 16),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImageView(
@@ -37,6 +33,7 @@ class ListanhItemWidget extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(width: 12,),
           Padding(
             padding: getPadding(
               bottom: 8,

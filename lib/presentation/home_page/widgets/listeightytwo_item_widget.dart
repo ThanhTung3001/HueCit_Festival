@@ -15,24 +15,28 @@ class ListeightytwoItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+    //  color: Colors.red,
       padding: getPadding(
-        top: 8.0,
-        bottom: 8.0,
+      //  top: 8.0,
+        bottom: 16
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
             onTap: () {
               onTapLoaihinh!();
             },
             child: Container(
+              margin: EdgeInsets.only(right: 16),
+              //color: Colors.red,
+             width: (Get.width/2)-25,
               padding: getPadding(
-                left: 37,
-                top: 14,
-                right: 37,
-                bottom: 14,
+                left: 16,
+                top: 16,
+                right: 16,
+                bottom: 16,
               ),
               decoration: AppDecoration.outlineAmber200.copyWith(
                 borderRadius: BorderRadiusStyle.roundedBorder12,
@@ -70,11 +74,13 @@ class ListeightytwoItemWidget extends StatelessWidget {
             ),
           ),
           Container(
+            //margin: EdgeInsets.only(left: 16),
+            width:( Get.width/2)-25,
             padding: getPadding(
-              left: 55,
-              top: 15,
-              right: 55,
-              bottom: 15,
+              left: 16,
+              top: 16,
+              right: 16,
+              bottom: 16,
             ),
             decoration: AppDecoration.outlineAmber200.copyWith(
               borderRadius: BorderRadiusStyle.roundedBorder12,
@@ -86,7 +92,7 @@ class ListeightytwoItemWidget extends StatelessWidget {
                 Text(
                   "lbl_16".tr,
                   overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   style: AppStyle.txtSFProBold26.copyWith(
                     height: 1.23,
                   ),

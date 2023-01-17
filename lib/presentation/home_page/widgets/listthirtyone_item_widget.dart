@@ -45,13 +45,14 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     children: [
                       CustomImageView(
+                        fit:BoxFit.cover,
                         imagePath: ImageConstant.imgImage,
                         height: getVerticalSize(
                           193.00,
                         ),
-                        width: getHorizontalSize(
-                          335.00,
-                        ),
+                        // width: getHorizontalSize(
+                        //   335.00,
+                        // ),
                         radius: BorderRadius.only(
                           topLeft: Radius.circular(
                             getHorizontalSize(
@@ -75,9 +76,9 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                           ),
                           padding: getPadding(
                             left: 4,
-                            top: 5,
+                            top: 4,
                             right: 4,
-                            bottom: 5,
+                            bottom: 4,
                           ),
                           decoration: AppDecoration.fillWhiteA700b2.copyWith(
                             borderRadius: BorderRadiusStyle.roundedBorder6,
