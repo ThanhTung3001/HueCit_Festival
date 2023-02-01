@@ -85,20 +85,14 @@ class AppDecoration {
             1.00,
           ),
         ),
+        borderRadius: BorderRadiusStyle.roundedBorder12,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.12),
-            spreadRadius: getHorizontalSize(
-              1.00,
-            ),
-            blurRadius: getHorizontalSize(
-              3.00,
-            ),
-            offset: Offset(
-              2,
-              2,
-            ),
-          ),
+            offset: Offset(4, 4),
+            blurRadius: 16,
+            spreadRadius: 0,
+          )
         ],
       );
   static BoxDecoration get fillBlack90001 => BoxDecoration(

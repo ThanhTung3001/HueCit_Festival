@@ -32,6 +32,8 @@ import 'package:hue_festival/presentation/app_navigation_screen/app_navigation_s
 import 'package:hue_festival/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
 
+import '../presentation/app_on_boarding/on_boarding_screen.dart';
+
 class AppRoutes {
   static const String splashScreen = '/splash_screen';
 
@@ -91,6 +93,8 @@ class AppRoutes {
   static const String appNavigationScreen = '/app_navigation_screen';
 
   static String initialRoute = '/initialRoute';
+
+  static String onBoarding = "/on_boarding";
 
   static List<GetPage> pages = [
     GetPage(
@@ -218,6 +222,14 @@ class AppRoutes {
       bindings: [
         SplashBinding(),
       ],
+    ),
+    GetPage(
+      name: "/on_boarding",
+      page: () => OnBoardingScreeen(),
+      bindings: [
+        SplashBinding(),
+      ],
     )
   ];
 }
+//OnBoardingScreeen

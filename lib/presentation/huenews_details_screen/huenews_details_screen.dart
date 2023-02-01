@@ -4,7 +4,6 @@ import 'controller/huenews_details_controller.dart';
 import 'models/listanh2_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hue_festival/core/app_export.dart';
-import 'package:hue_festival/widgets/custom_button.dart';
 
 class HuenewsDetailsScreen extends GetWidget<HuenewsDetailsController> {
   @override
@@ -28,8 +27,9 @@ class HuenewsDetailsScreen extends GetWidget<HuenewsDetailsController> {
                         SizedBox(
                             child: Container(
                                 width: size.width,
-                                margin: getMargin(bottom: 34),
-                                padding: getPadding(all: 16),
+                                margin: getMargin(bottom: 16),
+                                padding:
+                                    getPadding(left: 16, right: 16, top: 20),
                                 decoration: AppDecoration.fillWhiteA700
                                     .copyWith(
                                         borderRadius:
@@ -40,15 +40,28 @@ class HuenewsDetailsScreen extends GetWidget<HuenewsDetailsController> {
                                         CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      CustomButton(
-                                          height: 24,
-                                          width: 126,
-                                          text: "msg_s_ki_n_s_p_di_n".tr,
-                                          margin: getMargin(top: 4),
-                                          variant: ButtonVariant.FillAmber40033,
-                                          padding: ButtonPadding.PaddingAll4,
-                                          fontStyle:
-                                              ButtonFontStyle.SFProMedium12),
+                                      Container(
+                                        padding: EdgeInsets.only(
+                                            top: 4,
+                                            bottom: 4,
+                                            left: 8,
+                                            right: 8),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffFFC020)
+                                              .withOpacity(0.2),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Text(
+                                          "Sự kiện sắp diễn ra",
+                                          style: TextStyle(
+                                            color: Color(0xffECA900),
+                                            fontFamily: "SF Pro",
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ),
                                       Padding(
                                           padding: getPadding(top: 8),
                                           child: Text(

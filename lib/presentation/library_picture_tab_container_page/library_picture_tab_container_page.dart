@@ -64,16 +64,18 @@ class LibraryPictureTabContainerPage extends StatelessWidget {
                               bottom: BorderSide(
                                   color: ColorConstant.red900,
                                   width: getHorizontalSize(2.00)))))),
+
               Container(
-                  margin: getMargin(left: 16, top: 20, right: 16, bottom: 16),
-                  height: 581,
-                  child: TabBarView(
-                      controller: controller.navtabController,
-                      children: [
-                        LibraryAllPage(),
-                        LibraryPicturePage(),
-                        LibraryVideoPage()
-                      ]))
+                   margin: getMargin(left: 16, top: 20, right: 16,bottom: 16),
+                     height: 581,
+                   child: TabBarView(
+                       controller: controller.navtabController,
+                       children: [
+                         LibraryAllPage(),
+                         LibraryPicturePage(),
+                         LibraryVideoPage()
+                       ])),
+
             ])));
   }
 

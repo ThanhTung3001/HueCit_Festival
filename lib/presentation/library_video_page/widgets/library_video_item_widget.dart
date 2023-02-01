@@ -43,6 +43,23 @@ class LibraryVideoItemWidget extends StatelessWidget {
               onTapImgImage!();
             },
           ),
+
+          Container(
+            height: 50,
+              decoration: BoxDecoration(
+                  borderRadius:BorderRadius.circular(
+                      getHorizontalSize(12.00)) ,
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Colors.black.withOpacity(0.6),
+                      Colors.black.withOpacity(0),
+
+                    ],
+                  )),
+              child: Container()
+          ),
           Align(
             alignment: Alignment.bottomLeft,
             child: Padding(

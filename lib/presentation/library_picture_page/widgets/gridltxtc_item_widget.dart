@@ -43,6 +43,25 @@ class GridltxtcItemWidget extends StatelessWidget {
               onTapImgImage!();
             },
           ),
+          Positioned(
+            left: 0,
+            right: 0,
+
+            bottom: 0,
+              child: Container(
+                height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.circular(getHorizontalSize(12.00)),
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                          Colors.black.withOpacity(0.6),
+                          Colors.black.withOpacity(0),
+                        ],
+                      )),
+                  child: Container())),
           Align(
             alignment: Alignment.bottomLeft,
             child: Padding(

@@ -23,16 +23,21 @@ class ListthirtyoneItemWidget extends StatelessWidget {
             onTapCard!();
           },
           child: Container(
-           // color: Colors.red,
-            padding: EdgeInsets.zero,
-            margin: getMargin(
-              right: 10,
-              left: 6
-            ),
+            // color: Colors.red,
+            //  padding: EdgeInsets.zero,
+            margin: getMargin(right: 10, left: 6),
             width: Get.width,
             height: 300,
             decoration: AppDecoration.outlineGray200.copyWith(
               borderRadius: BorderRadiusStyle.roundedBorder12,
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.white.withOpacity(0.12),
+              //     offset: Offset(4, 4),
+              //     blurRadius: 16,
+              //     spreadRadius: 0,
+              //   )
+              // ],
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -44,14 +49,14 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                   height: getVerticalSize(
                     193.00,
                   ),
-                 // width: Get.width*0.6,
+                  // width: Get.width*0.6,
                   child: Stack(
                     //alignment: Alignment.topLeft,
                     children: [
                       Positioned.fill(
                         child: CustomImageView(
                           width: Get.width,
-                          fit:BoxFit.cover,
+                          fit: BoxFit.cover,
                           imagePath: ImageConstant.imgImage,
                           height: getVerticalSize(
                             193.00,
@@ -104,7 +109,7 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                               ),
                               Padding(
                                 padding: getPadding(
-                                 top: 4,
+                                  top: 4,
                                 ),
                                 child: Text(
                                   "lbl_12_2022".tr,
@@ -137,12 +142,7 @@ class ListthirtyoneItemWidget extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: getPadding(
-                    left: 16,
-                    top: 8,
-                    bottom: 16,
-                    right: 16
-                  ),
+                  padding: getPadding(left: 16, top: 8, bottom: 16, right: 16),
                   child: Row(
                     children: [
                       CustomImageView(

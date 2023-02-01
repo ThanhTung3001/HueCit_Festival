@@ -108,6 +108,10 @@ class CustomButton extends StatelessWidget {
       case ButtonPadding.PaddingAll4:
         return getPadding(
           all: 4,
+          // top: 4,
+          // left: 8,
+          // right: 8,
+          // bottom: 4,
         );
       default:
         return getPadding(
@@ -155,7 +159,7 @@ class CustomButton extends StatelessWidget {
       default:
         return BorderRadius.circular(
           getHorizontalSize(
-            12.00,
+            20,
           ),
         );
     }

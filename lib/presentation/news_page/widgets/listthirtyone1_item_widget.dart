@@ -73,9 +73,9 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                       ),
                       padding: getPadding(
                         left: 4,
-                        top: 5,
+                        top: 4,
                         right: 4,
-                        bottom: 5,
+                        bottom: 4,
                       ),
                       decoration: AppDecoration.fillWhiteA700b2.copyWith(
                         borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -94,7 +94,7 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                           ),
                           Padding(
                             padding: getPadding(
-                              top: 1,
+                              top: 4,
                             ),
                             child: Text(
                               "lbl_12_2022".tr,

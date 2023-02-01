@@ -29,7 +29,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
             child: SingleChildScrollView(
                 child: Container(
                     width: size.width,
-                    margin: getMargin(top: 17, bottom: 5),
+                    margin: getMargin(top: 20, bottom: 16),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -37,7 +37,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                               alignment: Alignment.centerLeft,
                               child: Container(
                                   width: getHorizontalSize(326.00),
-                                  margin: getMargin(left: 16),
+                                  margin: getMargin(left: 16,right: 16),
                                   child: Text("msg_m_t_s_l_h_i_d_n".tr,
                                       maxLines: null,
                                       textAlign: TextAlign.left,
@@ -51,14 +51,15 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                                     onTapThoigian();
                                   },
                                   child: Padding(
-                                      padding: getPadding(left: 16, top: 7),
+                                      padding: getPadding(left: 16, top: 8),
                                       child: Row(children: [
                                         CustomImageView(
                                             svgPath: ImageConstant
                                                 .imgCalendar16x16,
                                             height: getSize(16.00),
                                             width: getSize(16.00),
-                                            margin: getMargin(bottom: 1)),
+                                           //margin: getMargin(bottom: 1),
+                                        ),
                                         Padding(
                                             padding: getPadding(left: 4),
                                             child: Obx(() => Text(
@@ -82,7 +83,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                               margin: getMargin(top: 16)),
                           Container(
                               width: getHorizontalSize(343.00),
-                              margin: getMargin(top: 15),
+                              margin: getMargin(top: 16),
                               child: Text("msg_l_ch_c_a".tr,
                                   maxLines: null,
                                   textAlign: TextAlign.left,
@@ -90,7 +91,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                                       .copyWith(height: 1.50))),
                           Container(
                               width: getHorizontalSize(341.00),
-                              margin: getMargin(top: 13),
+                              margin: getMargin(top: 16),
                               child: Text("msg_c_hu_l_v_ng".tr,
                                   maxLines: null,
                                   textAlign: TextAlign.left,
@@ -100,10 +101,10 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                               imagePath: ImageConstant.imgPicture,
                               height: getVerticalSize(212.00),
                               width: getHorizontalSize(375.00),
-                              margin: getMargin(top: 14)),
+                              margin: getMargin(top: 16)),
                           Container(
                               width: getHorizontalSize(343.00),
-                              margin: getMargin(top: 7),
+                              margin: getMargin(top: 8),
                               child: Text("msg_ng_i_d_n_v_du".tr,
                                   maxLines: null,
                                   textAlign: TextAlign.center,
@@ -111,7 +112,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                                       .copyWith(height: 1.50))),
                           Container(
                               width: getHorizontalSize(339.00),
-                              margin: getMargin(top: 17),
+                              margin: getMargin(top: 16),
                               child: Text("msg_tri_n_l_m_gi_i_thi_u".tr,
                                   maxLines: null,
                                   textAlign: TextAlign.left,
@@ -120,7 +121,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                           Align(
                               alignment: Alignment.centerRight,
                               child: Padding(
-                                  padding: getPadding(top: 18, right: 16),
+                                  padding: getPadding(top: 16, right: 16),
                                   child: Text("lbl_xu_n_t".tr,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
@@ -144,7 +145,7 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                                           .copyWith(height: 1.25)))),
                           Padding(
                               padding:
-                                  getPadding(left: 16, top: 17, right: 21),
+                                  getPadding(left: 16, top: 16, right: 16),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,

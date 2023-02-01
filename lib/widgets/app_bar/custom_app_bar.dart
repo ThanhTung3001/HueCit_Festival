@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       this.leading,
       this.title,
       this.centerTitle,
+      this.bottom,
       this.actions});
 
   double height;
@@ -26,6 +27,8 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
 
   List<Widget>? actions;
 
+  PreferredSizeWidget? bottom;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -40,6 +43,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       titleSpacing: 0,
       centerTitle: centerTitle ?? false,
       actions: actions,
+      bottom: bottom,
     );
   }
 

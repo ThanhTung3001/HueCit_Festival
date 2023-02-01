@@ -64,7 +64,14 @@ class CustomSearchView extends StatelessWidget {
         controller: controller,
         focusNode: focusNode,
         autofocus: true,
-        style: _setFontStyle(),
+        style: TextStyle(
+          color: ColorConstant.black900,
+          fontSize: getFontSize(
+            16,
+          ),
+          fontFamily: 'SF Pro',
+          fontWeight: FontWeight.w400,
+        ),
         decoration: _buildDecoration(),
       ),
     );
@@ -148,9 +155,9 @@ class CustomSearchView extends StatelessWidget {
     switch (padding) {
       default:
         return getPadding(
-          top: 9,
-          right: 9,
-          bottom: 9,
+          top: 8,
+          right: 8,
+          bottom: 8,
         );
     }
   }

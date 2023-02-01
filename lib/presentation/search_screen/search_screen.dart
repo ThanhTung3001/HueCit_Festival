@@ -16,10 +16,11 @@ class SearchScreen extends GetWidget<SearchController> {
           64.00,
         ),
         title: CustomSearchView(
-          width: 296,
+          width: Get.width,
           focusNode: FocusNode(),
           controller: controller.searchbarController,
           hintText: "msg_nh_p_t_kh_a_t_m".tr,
+          //padding: EdgeInsets.only(bottom: 8,top: 8,right: 8),
           margin: getMargin(
             left: 16,
           ),
@@ -44,7 +45,7 @@ class SearchScreen extends GetWidget<SearchController> {
           Padding(
               padding: getPadding(
                 left: 16,
-                top: 23,
+                top: 20,
                 right: 16,
                 bottom: 20,
               ),
@@ -68,16 +69,16 @@ class SearchScreen extends GetWidget<SearchController> {
         width: size.width,
         padding: getPadding(
           left: 16,
-          top: 22,
+          top: 20,
           right: 16,
-          bottom: 22,
+          bottom: 20,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: getPadding(
-                right: 1,
+                // right: 1,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,7 +109,7 @@ class SearchScreen extends GetWidget<SearchController> {
             ),
             Padding(
               padding: getPadding(
-                top: 17,
+                top: 16,
               ),
               child: Obx(
                 () => ListView.builder(

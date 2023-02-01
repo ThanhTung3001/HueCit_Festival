@@ -15,8 +15,7 @@ class SearchItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: getPadding(
-        top: 6.0,
-        bottom: 6.0,
+       bottom: 12
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -114,4 +114,10 @@ class ImageConstant {
   static String imgOverflowmenu = 'assets/images/img_overflowmenu.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+  static String onBoaring = 'assets/images/onboaring_1.jpeg'; //onboaring_2
+  static String onBoaring2 = 'assets/images/onboaring_2.jpeg'; //onboaring_3
+  static String onBoaring3 = 'assets/images/onboaring_3.jpeg'; //onboaring_3
+  static String onBoaring4 = 'assets/images/onboaring_4.jpeg'; //onboaring_3
+  static String mapImg = 'assets/images/map_img.png'; //
+  static String readMore = 'assets/images/read_more.svg'; //
 }

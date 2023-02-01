@@ -79,17 +79,38 @@ class NewsPage extends StatelessWidget {
                                         onTap: () {
                                           onTapImgImage();
                                         }),
+                                    Positioned(
+                                      bottom: 0,
+                                      left: 0,
+                                      right: 0,
+                                      child: Container(
+                                        height: 100,
+                                        decoration: BoxDecoration(
+                                          borderRadius:BorderRadius.circular(
+                                              getHorizontalSize(12.00)) ,
+                                            gradient: LinearGradient(
+                                              begin: Alignment.bottomCenter,
+                                              end: Alignment.topCenter,
+                                              colors: [
+                                                Colors.black.withOpacity(0.8),
+                                                Colors.black.withOpacity(0),
+
+                                              ],
+                                            )),
+                                        child: Container()
+                                      ),
+                                    ),
                                     Align(
                                         alignment: Alignment.topLeft,
                                         child: Padding(
                                             padding:
-                                                getPadding(left: 8, top: 8),
+                                                getPadding(left: 8, top: 8,right: 8),
                                             child: Column(
-                                                mainAxisSize: MainAxisSize.min,
+                                             //   mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.start,
+                                                    MainAxisAlignment.spaceBetween,
                                                 children: [
                                                   Container(
                                                       width: getHorizontalSize(
@@ -136,7 +157,7 @@ class NewsPage extends StatelessWidget {
                                                             Padding(
                                                                 padding:
                                                                     getPadding(
-                                                                        top: 1),
+                                                                        top: 4),
                                                                 child: Text(
                                                                     "lbl_11_2022"
                                                                         .tr,
@@ -154,7 +175,7 @@ class NewsPage extends StatelessWidget {
                                                           ])),
                                                   Padding(
                                                       padding:
-                                                          getPadding(top: 104),
+                                                          getPadding(bottom: 16),
                                                       child: Text(
                                                           "msg_m_t_s_l_h_i_d_n"
                                                               .tr,

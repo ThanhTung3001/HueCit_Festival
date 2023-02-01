@@ -121,7 +121,8 @@ class FestivalListfestivalCategoryTraditionalfestivalScreen extends GetWidget<
                                                               height:
                                                                   1.50)))
                                             ])))),
-                                Align(
+                   
+                               Align(
                                     alignment: Alignment.centerRight,
                                     child: Container(
                                         width: getHorizontalSize(98.00),
