@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:hue_festival/data/models/festival/festival_model.dart';
 
 import 'controller/festival_listfestival_details_controller.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +13,14 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class FestivalListfestivalDetailsScreen
     extends GetWidget<FestivalListfestivalDetailsController> {
   CarouselController carouselController = CarouselController();
+  FestivalListfestivalDetailsScreen({required this.model});
   Rx<int> _current = 0.obs;
   Rx<bool> _readmore = false.obs;
+  FestivalModel model;
+
   @override
   Widget build(BuildContext context) {
+    List<String> imgs = model.hinhAnh!.split(",");
     return Scaffold(
         backgroundColor: ColorConstant.whiteA700,
         appBar: CustomAppBar(
@@ -52,34 +57,46 @@ class FestivalListfestivalDetailsScreen
                                     Positioned(
                                       left: 0,
                                       right: 0,
+                                      top: 0,
+                                      bottom: 0,
                                       child: CarouselSlider(
                                           carouselController:
                                               carouselController,
-                                          items: List.filled(
-                                            12,
-                                            CustomImageView(
-                                                imagePath: ImageConstant
-                                                    .imgRectangle15,
-                                                height: getVerticalSize(210.00),
-                                                width: Get.width,
-                                                alignment: Alignment.center,
-                                                onTap: () {
-                                                  //  onTapImgRectangleTwo();
-                                                }),
-                                          ),
+                                          items: imgs
+                                              .map(
+                                                (e) => CustomImageView(
+                                                    fit: BoxFit.cover,
+                                                    url: AppConstances
+                                                            .ENTRY_POINT +
+                                                        e,
+                                                    // height:
+                                                    //     getVerticalSize(210.00),
+                                                    width: Get.width,
+                                                    //   alignment: Alignment.center,
+                                                    onTap: () {
+                                                      //  onTapImgRectangleTwo();
+                                                    }),
+                                              )
+                                              .toList(),
                                           options: CarouselOptions(
+                                              autoPlay: true,
+                                              enlargeCenterPage: true,
+                                              viewportFraction: 1,
+                                              // aspectRatio: 1,
+                                              initialPage: 0,
                                               onPageChanged: ((index, reason) {
-                                            _current(index);
-                                          }))),
+                                                _current(index);
+                                              }))),
                                     ),
                                     Align(
                                         alignment: Alignment.bottomCenter,
-                                        child: Container(
+                                        child: Obx((() => Container(
                                             height: getVerticalSize(6.00),
                                             margin: getMargin(bottom: 8),
                                             child: SmoothIndicator(
-                                                offset: 0,
-                                                count: 5,
+                                                offset:
+                                                    _current.value.toDouble(),
+                                                count: imgs.length,
                                                 axisDirection: Axis.horizontal,
                                                 effect: ScrollingDotsEffect(
                                                     spacing: 4,
@@ -90,11 +107,11 @@ class FestivalListfestivalDetailsScreen
                                                     dotHeight:
                                                         getVerticalSize(6.00),
                                                     dotWidth: getHorizontalSize(
-                                                        6.00)))))
+                                                        6.00)))))))
                                   ])),
                           Padding(
                               padding: getPadding(left: 16, top: 16),
-                              child: Text("lbl_l_t_x_t_c".tr,
+                              child: Text(model.tenLeHoi ?? "",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: AppStyle.txtSFProBold20Gray90001
@@ -111,7 +128,7 @@ class FestivalListfestivalDetailsScreen
                               child: Container(
                                   width: getHorizontalSize(343.00),
                                   margin: getMargin(top: 8),
-                                  child: Text("msg_n_x_t_c_c".tr,
+                                  child: Text(model.gioiThieu ?? "",
                                       //  maxLines: null,
                                       textAlign: TextAlign.left,
                                       style: AppStyle.txtSFProRegular16
@@ -119,8 +136,9 @@ class FestivalListfestivalDetailsScreen
                           Obx(() {
                             if (_readmore.isTrue) {
                               return Container(
-                                height: 1000,
+                                //  height: 1000,
                                 child: ListView(
+                                  shrinkWrap: true,
                                   physics: NeverScrollableScrollPhysics(),
                                   children: [
                                     Padding(
@@ -133,102 +151,87 @@ class FestivalListfestivalDetailsScreen
                                     Align(
                                         alignment: Alignment.center,
                                         child: Padding(
-                                            padding: getPadding(top: 8),
-                                            child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  CustomImageView(
-                                                      imagePath: ImageConstant
-                                                          .imgRectangle15,
-                                                      height: getSize(167.00),
-                                                      width: getSize(167.00),
-                                                      radius:
-                                                          BorderRadius.circular(
-                                                              getHorizontalSize(
-                                                                  4.00))),
-                                                  Padding(
-                                                      padding:
-                                                          getPadding(left: 8),
-                                                      child: Column(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Container(
-                                                                width:
+                                            padding: getPadding(
+                                                top: 8, left: 16, right: 16),
+                                            child: imgs.length > 0
+                                                ? Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                        Expanded(
+                                                          child:
+                                                              CustomImageView(
+                                                            fit: BoxFit.cover,
+                                                            url: AppConstances
+                                                                    .ENTRY_POINT +
+                                                                imgs[0],
+                                                            height:
+                                                                getSize(167.00),
+                                                            radius: BorderRadius
+                                                                .circular(
                                                                     getHorizontalSize(
-                                                                        167.00),
-                                                                child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    children: [
-                                                                      CustomImageView(
-                                                                          imagePath: ImageConstant
-                                                                              .imgRectangle16,
-                                                                          height: getSize(
-                                                                              79.00),
-                                                                          width: getSize(
-                                                                              79.00),
-                                                                          radius:
-                                                                              BorderRadius.circular(getHorizontalSize(4.00))),
-                                                                      CustomImageView(
-                                                                          imagePath: ImageConstant
-                                                                              .imgRectangle17,
-                                                                          height: getSize(
-                                                                              79.00),
-                                                                          width: getSize(
-                                                                              79.00),
-                                                                          radius:
-                                                                              BorderRadius.circular(getHorizontalSize(4.00)))
-                                                                    ])),
-                                                            Container(
-                                                                width:
-                                                                    getHorizontalSize(
-                                                                        167.00),
-                                                                margin:
-                                                                    getMargin(
-                                                                        top: 8),
-                                                                child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    children: [
-                                                                      CustomImageView(
-                                                                          imagePath: ImageConstant
-                                                                              .imgRectangle1679x79,
-                                                                          height: getSize(
-                                                                              79.00),
-                                                                          width: getSize(
-                                                                              79.00),
-                                                                          radius:
-                                                                              BorderRadius.circular(getHorizontalSize(4.00))),
-                                                                      Container(
-                                                                          height: getSize(
-                                                                              79.00),
-                                                                          width: getSize(
-                                                                              79.00),
-                                                                          child: Stack(
-                                                                              alignment: Alignment.center,
-                                                                              children: [
-                                                                                CustomImageView(imagePath: ImageConstant.imgRectangle1779x79, height: getSize(79.00), width: getSize(79.00), radius: BorderRadius.circular(getHorizontalSize(4.00)), alignment: Alignment.center),
-                                                                                Align(alignment: Alignment.center, child: Text("lbl_102".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFProRegular14WhiteA700.copyWith(height: 1.21)))
-                                                                              ]))
-                                                                    ]))
-                                                          ]))
-                                                ]))),
-                                    Align(
-                                        alignment: Alignment.center,
-                                        child: Container(
-                                            width: getHorizontalSize(343.00),
-                                            margin: getMargin(top: 8),
-                                            child: Text("msg_n_x_t_c_c".tr,
-                                                maxLines: null,
-                                                textAlign: TextAlign.left,
-                                                style: AppStyle
-                                                    .txtSFProRegular16
-                                                    .copyWith(height: 1.50))))
+                                                                        4.00)),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 8,
+                                                        ),
+                                                        Expanded(
+                                                          child: Container(
+                                                            child: GridView.count(
+                                                                physics:
+                                                                    NeverScrollableScrollPhysics(),
+                                                                mainAxisSpacing:
+                                                                    8,
+                                                                crossAxisSpacing:
+                                                                    8,
+                                                                shrinkWrap:
+                                                                    true,
+                                                                crossAxisCount:
+                                                                    2,
+                                                                children: [
+                                                                  ...imgs.length <
+                                                                          4
+                                                                      ? (imgs
+                                                                          .map(
+                                                                          (e) =>
+                                                                              CustomImageView(
+                                                                            fit:
+                                                                                BoxFit.cover,
+                                                                            url:
+                                                                                AppConstances.ENTRY_POINT + e,
+                                                                            height:
+                                                                                getSize(79.00),
+                                                                            width:
+                                                                                getSize(79.00),
+                                                                            radius:
+                                                                                BorderRadius.circular(
+                                                                              getHorizontalSize(4.00),
+                                                                            ),
+                                                                          ),
+                                                                        ))
+                                                                      : imgs
+                                                                          .sublist(
+                                                                              0,
+                                                                              4)
+                                                                          .map(
+                                                                            (e) =>
+                                                                                CustomImageView(
+                                                                              fit: BoxFit.cover,
+                                                                              url: AppConstances.ENTRY_POINT + e,
+                                                                              height: getSize(79.00),
+                                                                              width: getSize(79.00),
+                                                                              radius: BorderRadius.circular(
+                                                                                getHorizontalSize(4.00),
+                                                                              ),
+                                                                            ),
+                                                                          )
+                                                                ]),
+                                                          ),
+                                                        )
+                                                      ])
+                                                : Container())),
                                   ],
                                 ),
                               );

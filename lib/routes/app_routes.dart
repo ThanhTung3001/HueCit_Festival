@@ -12,12 +12,8 @@ import 'package:hue_festival/presentation/huenews_details_one_screen/huenews_det
 import 'package:hue_festival/presentation/huenews_details_one_screen/binding/huenews_details_one_binding.dart';
 import 'package:hue_festival/presentation/huenews_details_screen/huenews_details_screen.dart';
 import 'package:hue_festival/presentation/huenews_details_screen/binding/huenews_details_binding.dart';
-import 'package:hue_festival/presentation/typicalfestival_screen/typicalfestival_screen.dart';
-import 'package:hue_festival/presentation/typicalfestival_screen/binding/typicalfestival_binding.dart';
 import 'package:hue_festival/presentation/festival_listfestival_category_screen/festival_listfestival_category_screen.dart';
 import 'package:hue_festival/presentation/festival_listfestival_category_screen/binding/festival_listfestival_category_binding.dart';
-import 'package:hue_festival/presentation/festival_listfestival_details_screen/festival_listfestival_details_screen.dart';
-import 'package:hue_festival/presentation/festival_listfestival_details_screen/binding/festival_listfestival_details_binding.dart';
 import 'package:hue_festival/presentation/library_picture_details_screen/library_picture_details_screen.dart';
 import 'package:hue_festival/presentation/library_picture_details_screen/binding/library_picture_details_binding.dart';
 import 'package:hue_festival/presentation/library_video_details_screen/library_video_details_screen.dart';
@@ -146,13 +142,13 @@ class AppRoutes {
         HuenewsDetailsBinding(),
       ],
     ),
-    GetPage(
-      name: typicalfestivalScreen,
-      page: () => TypicalfestivalScreen(),
-      bindings: [
-        TypicalfestivalBinding(),
-      ],
-    ),
+    // GetPage(
+    //   name: typicalfestivalScreen,
+    //   page: () => TypicalfestivalScreen(),
+    //   bindings: [
+    //     TypicalfestivalBinding(),
+    //   ],
+    // ),
     GetPage(
       name: festivalListfestivalCategoryScreen,
       page: () => FestivalListfestivalCategoryScreen(),
@@ -167,13 +163,13 @@ class AppRoutes {
         FestivalListfestivalCategoryBinding(),
       ],
     ),
-    GetPage(
-      name: festivalListfestivalDetailsScreen,
-      page: () => FestivalListfestivalDetailsScreen(),
-      bindings: [
-        FestivalListfestivalDetailsBinding(),
-      ],
-    ),
+    // GetPage(
+    //   name: festivalListfestivalDetailsScreen,
+    //   page: () => FestivalListfestivalDetailsScreen(),
+    //   bindings: [
+    //     FestivalListfestivalDetailsBinding(),
+    //   ],
+    // ),
     GetPage(
       name: libraryPictureDetailsScreen,
       page: () => LibraryPictureDetailsScreen(),

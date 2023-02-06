@@ -5,14 +5,15 @@ import 'package:hue_festival/core/app_export.dart';
 
 // ignore: must_be_immutable
 class ListanhItemWidget extends StatelessWidget {
-  ListanhItemWidget(this.listanhItemModelObj);
+  ListanhItemWidget(this.model);
 
-  ListanhItemModel listanhItemModelObj;
+  ListanhItemModel model;
 
   var controller = Get.find<NewsController>();
 
   @override
   Widget build(BuildContext context) {
+    model.time = model.time.replaceAll("-", "/");
     return Container(
       margin: getMargin(bottom: 16),
       child: Row(
@@ -20,7 +21,8 @@ class ListanhItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImageView(
-            imagePath: ImageConstant.imgAnh3,
+            fit: BoxFit.cover,
+            url: model.url,
             height: getVerticalSize(
               80.00,
             ),
@@ -33,7 +35,9 @@ class ListanhItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 12,),
+          SizedBox(
+            width: 12,
+          ),
           Padding(
             padding: getPadding(
               bottom: 8,
@@ -47,8 +51,8 @@ class ListanhItemWidget extends StatelessWidget {
                     202.00,
                   ),
                   child: Text(
-                    "msg_ph_n_lo_i_l_h_i".tr,
-                    maxLines: null,
+                    model.title,
+                    maxLines: 2,
                     textAlign: TextAlign.left,
                     style: AppStyle.txtSFProMedium16.copyWith(
                       height: 1.50,
@@ -78,7 +82,7 @@ class ListanhItemWidget extends StatelessWidget {
                           left: 4,
                         ),
                         child: Text(
-                          "lbl_23_11_2022".tr,
+                          model.time,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtSFProRegular14Gray900.copyWith(
