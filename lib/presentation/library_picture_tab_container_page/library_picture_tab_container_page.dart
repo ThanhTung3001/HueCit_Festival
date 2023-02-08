@@ -35,48 +35,59 @@ class LibraryPictureTabContainerPage extends StatelessWidget {
             ],
             styleType: Style.bgFillWhiteA700),
         body: Container(
-            width: size.width,
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Container(
-                  width: size.width,
-                  decoration: BoxDecoration(
-                      color: ColorConstant.whiteA700,
-                      border: Border(
-                          bottom: BorderSide(
-                              color: ColorConstant.gray200,
-                              width: getHorizontalSize(1.00)))),
-                  child: TabBar(
+          width: size.width,
+          height: Get.height,
+          child: Stack(children: [
+            Positioned(
+              // top: 40,
+              left: 0,
+              right: 0,
+              child: Container(
+                  margin: getMargin(left: 16, top: 60, right: 16, bottom: 16),
+                  height: Get.height,
+                  child: TabBarView(
                       controller: controller.navtabController,
-                      tabs: [
-                        Tab(text: "lbl_t_t_c".tr),
-                        Tab(text: "lbl_h_nh_nh".tr),
-                        Tab(text: "lbl_video".tr)
-                      ],
-                      labelStyle: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                      children: [
+                        LibraryAllPage(),
+                        LibraryPicturePage(),
+                        LibraryVideoPage()
+                      ])),
+            ),
+            Positioned(
+              child: Container(
+                width: size.width,
+                decoration: BoxDecoration(
+                    color: ColorConstant.whiteA700,
+                    border: Border(
+                        bottom: BorderSide(
+                            color: ColorConstant.gray200,
+                            width: getHorizontalSize(1.00)))),
+                child: TabBar(
+                  controller: controller.navtabController,
+                  tabs: [
+                    Tab(text: "lbl_t_t_c".tr),
+                    Tab(text: "lbl_h_nh_nh".tr),
+                    Tab(text: "lbl_video".tr)
+                  ],
+                  labelStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  labelColor: ColorConstant.red900,
+                  unselectedLabelColor: ColorConstant.black90066,
+                  indicator: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: ColorConstant.red900,
+                        width: getHorizontalSize(2.00),
                       ),
-                      labelColor: ColorConstant.red900,
-                      unselectedLabelColor: ColorConstant.black90066,
-                      indicator: BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(
-                                  color: ColorConstant.red900,
-                                  width: getHorizontalSize(2.00)))))),
-
-              Container(
-                   margin: getMargin(left: 16, top: 20, right: 16,bottom: 16),
-                     height: 581,
-                   child: TabBarView(
-                       controller: controller.navtabController,
-                       children: [
-                         LibraryAllPage(),
-                         LibraryPicturePage(),
-                         LibraryVideoPage()
-                       ])),
-
-            ])));
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ]),
+        ));
   }
 
   onTapSearch3() {

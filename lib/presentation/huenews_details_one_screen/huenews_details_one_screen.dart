@@ -1,29 +1,34 @@
+import 'package:flutter_html/flutter_html.dart';
+import 'package:hue_festival/data/models/new/new_model.dart';
+
 import '../huenews_details_one_screen/widgets/listanh1_item_widget.dart';
-import 'controller/huenews_details_one_controller.dart';
-import 'models/listanh1_item_model.dart';
+import '../news_page/controller/news_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:hue_festival/core/app_export.dart';
 import 'package:hue_festival/widgets/app_bar/appbar_image.dart';
 import 'package:hue_festival/widgets/app_bar/appbar_subtitle.dart';
-import 'package:hue_festival/widgets/app_bar/custom_app_bar.dart';
+import 'package:hue_festival/widgets/app_bar/custom_app_bar.dart' as AppBar;
 
-class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
+class HuenewsDetailsOneScreen extends GetWidget<NewsController> {
+  // var _newController = Get.put();
+  NewsList model;
+  HuenewsDetailsOneScreen({required this.model});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ColorConstant.whiteA700,
-        appBar: CustomAppBar(
-            height: getVerticalSize(56.00),
-            leadingWidth: 40,
-            leading: AppbarImage(
-                height: getSize(24.00),
-                width: getSize(24.00),
-                svgPath: ImageConstant.imgArrowleft,
-                margin: getMargin(left: 16, top: 12, bottom: 12),
-                onTap: onTapArrowleft2),
-            centerTitle: true,
-            title: AppbarSubtitle(text: "msg_chi_ti_t_tin_t_c".tr),
-            styleType: Style.bgOutlineGray200),
+        appBar: AppBar.CustomAppBar(
+          height: getVerticalSize(56.00),
+          leadingWidth: 40,
+          leading: AppbarImage(
+              height: getSize(24.00),
+              width: getSize(24.00),
+              svgPath: ImageConstant.imgArrowleft,
+              margin: getMargin(left: 16, top: 12, bottom: 12),
+              onTap: onTapArrowleft2),
+          centerTitle: true,
+          title: AppbarSubtitle(text: "msg_chi_ti_t_tin_t_c".tr),
+        ),
         body: SizedBox(
             width: size.width,
             child: SingleChildScrollView(
@@ -36,103 +41,80 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Container(
-                                  width: getHorizontalSize(326.00),
-                                  margin: getMargin(left: 16,right: 16),
-                                  child: Text("msg_m_t_s_l_h_i_d_n".tr,
-                                      maxLines: null,
+                                  // width: getHorizontalSize(326.00),
+                                  margin: getMargin(left: 16, right: 16),
+                                  child: Text(model.title ?? "",
+                                      maxLines: 2,
                                       textAlign: TextAlign.left,
-                                      style: AppStyle
-                                          .txtSFProBold20Gray90001
+                                      style: AppStyle.txtSFProBold20Gray90001
                                           .copyWith(height: 1.40)))),
                           Align(
                               alignment: Alignment.centerLeft,
                               child: GestureDetector(
                                   onTap: () {
-                                    onTapThoigian();
+                                    //  onTapThoigian();
                                   },
                                   child: Padding(
                                       padding: getPadding(left: 16, top: 8),
                                       child: Row(children: [
                                         CustomImageView(
-                                            svgPath: ImageConstant
-                                                .imgCalendar16x16,
-                                            height: getSize(16.00),
-                                            width: getSize(16.00),
-                                           //margin: getMargin(bottom: 1),
+                                          svgPath:
+                                              ImageConstant.imgCalendar16x16,
+                                          height: getSize(16.00),
+                                          width: getSize(16.00),
+                                          //margin: getMargin(bottom: 1),
                                         ),
                                         Padding(
                                             padding: getPadding(left: 4),
-                                            child: Obx(() => Text(
-                                                controller
-                                                    .huenewsDetailsOneModelObj
-                                                    .value
-                                                    .dateTxt
-                                                    .value,
-                                                overflow:
-                                                    TextOverflow.ellipsis,
+                                            child: Text(
+                                                (model.publishTime ?? '')
+                                                    .replaceAll("-", "/"),
+                                                overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.left,
                                                 style: AppStyle
                                                     .txtSFProRegular14Black90066
-                                                    .copyWith(
-                                                        height: 1.21))))
+                                                    .copyWith(height: 1.21)))
                                       ])))),
                           CustomImageView(
-                              imagePath: ImageConstant.imgAnh80x120,
+                              fit: BoxFit.cover,
+                              url: model.imgNews!.url ?? "",
                               height: getVerticalSize(212.00),
-                              width: getHorizontalSize(375.00),
+                              width: Get.width,
                               margin: getMargin(top: 16)),
                           Container(
-                              width: getHorizontalSize(343.00),
-                              margin: getMargin(top: 16),
-                              child: Text("msg_l_ch_c_a".tr,
-                                  maxLines: null,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProMedium16
-                                      .copyWith(height: 1.50))),
+                              //width: getHorizontalSize(343.00),
+                              margin: getMargin(top: 16, left: 16, right: 16),
+                              child: Text(
+                                model.summary ?? "",
+                                // maxLines: null,
+                                textAlign: TextAlign.left,
+                                style: AppStyle.txtSFProMedium16
+                                    .copyWith(height: 1.50),
+                              )),
                           Container(
-                              width: getHorizontalSize(341.00),
-                              margin: getMargin(top: 16),
-                              child: Text("msg_c_hu_l_v_ng".tr,
-                                  maxLines: null,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProRegular16
-                                      .copyWith(height: 1.50))),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgPicture,
-                              height: getVerticalSize(212.00),
-                              width: getHorizontalSize(375.00),
-                              margin: getMargin(top: 16)),
-                          Container(
-                              width: getHorizontalSize(343.00),
-                              margin: getMargin(top: 8),
-                              child: Text("msg_ng_i_d_n_v_du".tr,
-                                  maxLines: null,
-                                  textAlign: TextAlign.center,
-                                  style: AppStyle.txtSFProRegularItalic16
-                                      .copyWith(height: 1.50))),
-                          Container(
-                              width: getHorizontalSize(339.00),
-                              margin: getMargin(top: 16),
-                              child: Text("msg_tri_n_l_m_gi_i_thi_u".tr,
-                                  maxLines: null,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProRegular16
-                                      .copyWith(height: 1.50))),
-                          Align(
-                              alignment: Alignment.centerRight,
-                              child: Padding(
-                                  padding: getPadding(top: 16, right: 16),
-                                  child: Text("lbl_xu_n_t".tr,
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.left,
-                                      style: AppStyle.txtSFProBold16
-                                          .copyWith(height: 1.25)))),
+                              padding: EdgeInsets.only(
+                                left: 8,
+                                right: 8,
+                              ),
+                              //  width: getHorizontalSize(341.00),
+                              //   margin: getMargin(top: 16),
+                              child: Html(
+                                data: model.content,
+                                style: {
+                                  "p": Style(
+                                    fontFamily: "SF Pro",
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: FontSize(16),
+                                    lineHeight: LineHeight(1.5),
+                                  )
+                                },
+                              )),
                           Container(
                               height: getVerticalSize(1.00),
                               width: getHorizontalSize(343.00),
                               margin: getMargin(top: 16),
-                              decoration: BoxDecoration(
-                                  color: ColorConstant.gray200)),
+                              decoration:
+                                  BoxDecoration(color: ColorConstant.gray200)),
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
@@ -140,42 +122,21 @@ class HuenewsDetailsOneScreen extends GetWidget<HuenewsDetailsOneController> {
                                   child: Text("lbl_c_c_tin_kh_c".tr,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
-                                      style: AppStyle
-                                          .txtSFProMedium16Black900
+                                      style: AppStyle.txtSFProMedium16Black900
                                           .copyWith(height: 1.25)))),
-                          Padding(
-                              padding:
-                                  getPadding(left: 16, top: 16, right: 16),
-                              child: Obx(() => ListView.builder(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: controller
-                                      .huenewsDetailsOneModelObj
-                                      .value
-                                      .listanh1ItemList
-                                      .length,
-                                  itemBuilder: (context, index) {
-                                    Listanh1ItemModel model = controller
-                                        .huenewsDetailsOneModelObj
-                                        .value
-                                        .listanh1ItemList[index];
-                                    return Listanh1ItemWidget(model);
-                                  })))
+                          controller.obx(((state) => Padding(
+                                padding:
+                                    getPadding(left: 16, top: 16, right: 16),
+                                child: ListView.builder(
+                                    physics: NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemCount: state!.item1.newsList!.length,
+                                    itemBuilder: (context, index) {
+                                      var model = state.item1.newsList![index];
+                                      return Listanh1ItemWidget(model);
+                                    }),
+                              )))
                         ])))));
-  }
-
-  Future<void> onTapThoigian() async {
-    DateTime? dateTime = await showDatePicker(
-        context: Get.context!,
-        initialDate: controller.huenewsDetailsOneModelObj.value.selectedDateTxt,
-        firstDate: DateTime(1970),
-        lastDate: DateTime(
-            DateTime.now().year, DateTime.now().month, DateTime.now().day));
-    if (dateTime != null) {
-      controller.huenewsDetailsOneModelObj.value.selectedDateTxt = dateTime;
-      controller.huenewsDetailsOneModelObj.value.dateTxt.value =
-          dateTime.format(SHORT_DATE_WITH_FULL_YEAR);
-    }
   }
 
   onTapArrowleft2() {

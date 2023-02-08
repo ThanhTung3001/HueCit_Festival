@@ -8,8 +8,6 @@ import 'package:hue_festival/presentation/huenews_screen/huenews_screen.dart';
 import 'package:hue_festival/presentation/huenews_screen/binding/huenews_binding.dart';
 import 'package:hue_festival/presentation/comingfestival_screen/comingfestival_screen.dart';
 import 'package:hue_festival/presentation/comingfestival_screen/binding/comingfestival_binding.dart';
-import 'package:hue_festival/presentation/huenews_details_one_screen/huenews_details_one_screen.dart';
-import 'package:hue_festival/presentation/huenews_details_one_screen/binding/huenews_details_one_binding.dart';
 import 'package:hue_festival/presentation/huenews_details_screen/huenews_details_screen.dart';
 import 'package:hue_festival/presentation/huenews_details_screen/binding/huenews_details_binding.dart';
 import 'package:hue_festival/presentation/festival_listfestival_category_screen/festival_listfestival_category_screen.dart';
@@ -128,13 +126,13 @@ class AppRoutes {
         ComingfestivalBinding(),
       ],
     ),
-    GetPage(
-      name: huenewsDetailsOneScreen,
-      page: () => HuenewsDetailsOneScreen(),
-      bindings: [
-        HuenewsDetailsOneBinding(),
-      ],
-    ),
+    // GetPage(
+    //   name: huenewsDetailsOneScreen,
+    //   page: () => HuenewsDetailsOneScreen(),
+    //   bindings: [
+    //     HuenewsDetailsOneBinding(),
+    //   ],
+    // ),
     GetPage(
       name: huenewsDetailsScreen,
       page: () => HuenewsDetailsScreen(),

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:hue_festival/core/app_export.dart';
 
 // ignore: must_be_immutable
-class Listthirtyone1ItemWidget extends StatelessWidget {
-  Listthirtyone1ItemWidget(this.listthirtyone1ItemModelObj, {this.onTapCard});
+class ListEventWidget extends StatelessWidget {
+  ListEventWidget(this.listEventModel, {this.onTapCard});
 
-  Listthirtyone1ItemModel listthirtyone1ItemModelObj;
+  ListEventModel listEventModel;
 
   var controller = Get.find<NewsController>();
 
@@ -15,6 +15,9 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime time = DateTime.parse(listEventModel.time);
+    String date = time.day.toString();
+    String monthYear = "${time.month}.${time.year}";
     return GestureDetector(
       onTap: () {
         onTapCard!();
@@ -43,7 +46,7 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 children: [
                   CustomImageView(
-                    imagePath: ImageConstant.imgImage,
+                    url: AppConstances.ENTRY_POINT + "/" + listEventModel.url,
                     height: getVerticalSize(
                       193.00,
                     ),
@@ -85,7 +88,7 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "lbl_31".tr,
+                            date,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: AppStyle.txtSFProBold16Red900.copyWith(
@@ -97,7 +100,7 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                               top: 4,
                             ),
                             child: Text(
-                              "lbl_12_2022".tr,
+                              monthYear,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtSFProRegular10.copyWith(
@@ -118,7 +121,7 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                 top: 19,
               ),
               child: Text(
-                "msg_ch_ng_tr_nh_countdown".tr,
+                listEventModel.title,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: AppStyle.txtSFProBold16Gray90001.copyWith(
@@ -148,7 +151,7 @@ class Listthirtyone1ItemWidget extends StatelessWidget {
                       left: 4,
                     ),
                     child: Text(
-                      "lbl_th_nh_ph_hu".tr,
+                      listEventModel.location.tr,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtSFProRegular14.copyWith(

@@ -238,17 +238,26 @@ class NewsList {
     data['TienNghi'] = this.tienNghi;
     return data;
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NewsList && runtimeType == other.runtimeType && id == other.id;
+
+  @override
+  // TODO: implement hashCode
+  int get hashCode => super.hashCode;
 }
 
 class Category {
   String? id;
   int? idextra;
-  Null? tenma;
+  String? tenma;
   String? title;
-  Null? parent;
-  Null? url;
-  Null? anhbieutuong;
-  Null? anhdaidien;
+  String? parent;
+  String? url;
+  String? anhbieutuong;
+  String? anhdaidien;
 
   Category(
       {this.id,

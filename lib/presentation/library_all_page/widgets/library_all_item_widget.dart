@@ -1,13 +1,16 @@
+import 'package:hue_festival/core/utils/file_extension.dart';
+import 'package:hue_festival/data/models/media/media_model.dart';
+import 'package:hue_festival/presentation/library_all_page/widgets/lib_video.dart';
+
 import '../controller/library_all_controller.dart';
-import '../models/library_all_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hue_festival/core/app_export.dart';
 
 // ignore: must_be_immutable
 class LibraryAllItemWidget extends StatelessWidget {
-  LibraryAllItemWidget(this.libraryAllItemModelObj, {this.onTapImgImage});
+  LibraryAllItemWidget(this.model, {this.onTapImgImage});
 
-  LibraryAllItemModel libraryAllItemModelObj;
+  MediaModel model;
 
   var controller = Get.find<LibraryAllController>();
 
@@ -15,6 +18,9 @@ class LibraryAllItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // model.lienKet =
+    //     "https://file-examples.com/storage/feeb72b10363daaeba4c0c9/2017/04/file_example_MP4_480_1_5MG.mp4";
+    var img = (AppConstances.ENTRY_POINT + model.lienKet!.split(",")[0]);
     return Container(
       height: getSize(
         103.00,
@@ -25,52 +31,44 @@ class LibraryAllItemWidget extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomLeft,
         children: [
-
-          CustomImageView(
-            imagePath: ImageConstant.imgAnh,
-            height: getSize(
-              103.00,
-            ),
-            width: getSize(
-              103.00,
-            ),
-            radius: BorderRadius.circular(
-              getHorizontalSize(
-                8.00,
-              ),
-            ),
-            alignment: Alignment.center,
-            onTap: () {
-              onTapImgImage!();
-            },
-          ),
-
+          FileExtension.getExtensionFile(img) != "mp4"
+              ? CustomImageView(
+                  fit: BoxFit.fitHeight,
+                  url: img,
+                  radius: BorderRadius.circular(
+                    getHorizontalSize(
+                      8.00,
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                  onTap: () {
+                    onTapImgImage!();
+                  },
+                )
+              : ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: FirstFrame(path: model.lienKet!, onTap: () {}),
+                ),
           Container(
-            height: 50,
+              height: 50,
               decoration: BoxDecoration(
-                  borderRadius:BorderRadius.circular(
-                      getHorizontalSize(12.00)) ,
+                  borderRadius: BorderRadius.circular(getHorizontalSize(12.00)),
                   gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                     colors: [
-                      Colors.black.withOpacity(0.6),
+                      Colors.black.withOpacity(0.8),
                       Colors.black.withOpacity(0),
-
                     ],
                   )),
-              child: Container()
-          ),
+              child: Container()),
           Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
-              padding: getPadding(
-                left: 8,
-                bottom: 8,
-                right: 8
-              ),
+              padding: getPadding(left: 8, bottom: 8, right: 8),
               child: Text(
-                "lbl_l_t_x_t_c2".tr,
+                model.tenLeHoi!,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: AppStyle.txtSFProMedium12WhiteA700.copyWith(

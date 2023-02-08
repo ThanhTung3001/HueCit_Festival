@@ -9,4 +9,6 @@ class AppApi {
       '/API/CSDLLeHoi/LoaiLeHoiApi/CountByFestivalType';
   static String newUrl =
       "/api/APITinBai/v1/News/getListNewsbyCateID"; //&size=5&index=0
+  static String eventUrl = "/API/CSDLLeHoi/SuKienApi/Gets"; //&size=5&index=0
+  static String mediaUrl = '/API/CSDLLeHoi/MediaApi/Gets';
 }

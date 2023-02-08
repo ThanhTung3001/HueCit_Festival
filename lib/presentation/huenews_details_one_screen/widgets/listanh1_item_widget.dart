@@ -1,28 +1,28 @@
-import '../controller/huenews_details_one_controller.dart';
-import '../models/listanh1_item_model.dart';
+import 'package:hue_festival/data/models/new/new_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:hue_festival/core/app_export.dart';
 
 // ignore: must_be_immutable
 class Listanh1ItemWidget extends StatelessWidget {
-  Listanh1ItemWidget(this.listanh1ItemModelObj);
+  Listanh1ItemWidget(this.model);
 
-  Listanh1ItemModel listanh1ItemModelObj;
+  NewsList model;
 
-  var controller = Get.find<HuenewsDetailsOneController>();
+  //var controller = Get.find<HuenewsDetailsOneController>();
 
   @override
   Widget build(BuildContext context) {
+    print(model.imgNews!.url ?? "");
     return Padding(
-      padding: getPadding(
-       bottom: 16
-      ),
+      padding: getPadding(bottom: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImageView(
-            imagePath: ImageConstant.imgAnh3,
+            fit: BoxFit.cover,
+            url: model.imgNews!.url!,
             height: getVerticalSize(
               80.00,
             ),
@@ -35,7 +35,9 @@ class Listanh1ItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 12,),
+          SizedBox(
+            width: 12,
+          ),
           Padding(
             padding: getPadding(
               bottom: 8,
@@ -49,8 +51,8 @@ class Listanh1ItemWidget extends StatelessWidget {
                     202.00,
                   ),
                   child: Text(
-                    "msg_ph_n_lo_i_l_h_i".tr,
-                    maxLines: null,
+                    model.title ?? "",
+                    maxLines: 2,
                     textAlign: TextAlign.left,
                     style: AppStyle.txtSFProMedium16.copyWith(
                       height: 1.50,
@@ -80,7 +82,7 @@ class Listanh1ItemWidget extends StatelessWidget {
                           left: 4,
                         ),
                         child: Text(
-                          "lbl_23_11_2022".tr,
+                          model.publishTime!.replaceAll("-", "/"),
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtSFProRegular14Gray900.copyWith(
