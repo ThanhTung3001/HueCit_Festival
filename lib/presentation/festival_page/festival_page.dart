@@ -3,6 +3,7 @@ import 'package:hue_festival/presentation/festival_page/widgets/listeightytwo1_i
 import 'package:hue_festival/presentation/typicalfestival_screen/typicalfestival_screen.dart';
 import 'package:hue_festival/widgets/custom_button.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:readmore/readmore.dart';
 import 'package:skeletons/skeletons.dart';
 
 import '../festival_listfestival_details_screen/festival_listfestival_details_screen.dart';
@@ -79,21 +80,37 @@ class FestivalPage extends GetView<FestivalController> {
                                   style: AppStyle.txtSFProBold16Gray90001
                                       .copyWith(height: 1.25))),
                           Container(
-                              //width: getHorizontalSize(338.00),
-                              margin: getMargin(top: 4),
-                              child: Text("msg_kh_ng_n_o_nhi_t".tr,
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProRegular16
-                                      .copyWith(height: 1.50))),
-                          Padding(
-                              padding: getPadding(top: 8, bottom: 4),
-                              child: Text("lbl_xem_th_m".tr,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtSFProMedium12
-                                      .copyWith(height: 1.25))),
+                            //width: getHorizontalSize(338.00),
+                            margin: getMargin(top: 4),
+                            child: ReadMoreText(
+                              "msg_kh_ng_n_o_nhi_t".tr,
+                              trimLines: 3,
+                              colorClickableText: ColorConstant.whiteA700,
+                              lessStyle: AppStyle.txtSFProMedium12
+                                  .copyWith(height: 1.25),
+                              trimMode: TrimMode.Line,
+                              trimCollapsedText: 'Xem thêm',
+                              trimExpandedText: 'Thu gọn',
+                              style: AppStyle.txtSFProRegular16
+                                  .copyWith(height: 1.50),
+                              moreStyle: AppStyle.txtSFProMedium12
+                                  .copyWith(height: 1.25),
+                            ),
+
+                            // Text("msg_kh_ng_n_o_nhi_t".tr,
+                            //     maxLines: 3,
+                            //     overflow: TextOverflow.ellipsis,
+                            //     textAlign: TextAlign.left,
+                            // style: AppStyle.txtSFProRegular16
+                            //     .copyWith(height: 1.50)),
+                          ),
+                          // Padding(
+                          //     padding: getPadding(top: 8, bottom: 4),
+                          //     child: Text("lbl_xem_th_m".tr,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.left,
+                          //         style: AppStyle.txtSFProMedium12
+                          //             .copyWith(height: 1.25))),
                           Padding(
                               padding: getPadding(
                                 top: 32,
@@ -146,6 +163,7 @@ class FestivalPage extends GetView<FestivalController> {
                                                 onTapTintuc(e);
                                               },
                                               child: Container(
+                                                  width: 160,
                                                   margin: getMargin(right: 16),
                                                   decoration: AppDecoration
                                                       .fillWhiteA700

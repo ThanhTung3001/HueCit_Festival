@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:hue_festival/presentation/app_on_boarding/on_boarding_screen.dart';
 
 import 'core/app_export.dart';
 
@@ -27,9 +26,9 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Locale('en', 'US'),
       title: 'Hue Festival',
       initialBinding: InitialBindings(),
-     //home: OnBoardingScreeen()
+      //home: OnBoardingScreeen()
 
-       initialRoute: AppRoutes.initialRoute,
+      initialRoute: AppRoutes.initialRoute,
       getPages: AppRoutes.pages,
       builder: EasyLoading.init(),
     );

@@ -15,7 +15,7 @@ class FestivalListfestivalDetailsScreen
   CarouselController carouselController = CarouselController();
   FestivalListfestivalDetailsScreen({required this.model});
   Rx<int> _current = 0.obs;
-  Rx<bool> _readmore = false.obs;
+  Rx<bool> _readmore = true.obs;
   FestivalModel model;
 
   @override

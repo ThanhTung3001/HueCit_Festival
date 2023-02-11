@@ -3,11 +3,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:hue_festival/core/app_export.dart';
+import 'package:hue_festival/data/models/media/media_model.dart';
+import 'package:readmore/readmore.dart';
 
 import 'controller/library_video_details_controller.dart';
 
 class LibraryVideoDetailsScreen extends StatefulWidget {
-  const LibraryVideoDetailsScreen({Key? key}) : super(key: key);
+  LibraryVideoDetailsScreen({Key? key, required this.urls}) : super(key: key);
+  List<MediaModel> urls;
 
   @override
   State<LibraryVideoDetailsScreen> createState() =>
@@ -21,10 +24,25 @@ class _LibraryVideoDetailsScreenState extends State<LibraryVideoDetailsScreen> {
   CarouselController _carouselController = CarouselController();
   @override
   void initState() {
-    // TODO: implement initState
-    //super.initState();
     super.initState();
-    controllerVideo.initVideo(0);
+    _init();
+  }
+
+  _init() async {
+    List<String> pathFiles = [];
+
+    widget.urls.forEach((e) {
+      pathFiles.add(e.lienKet!.split(",").first.toString());
+    });
+    //var paths = widget.urls[0].lienKet!.split(",");
+
+    pathFiles =
+        pathFiles.map((e) => AppConstances.ENTRY_POINT + e.trimLeft()).toList();
+    print(pathFiles);
+    controllerVideo.libraryVideoDetailsModelObj(controllerVideo
+        .libraryVideoDetailsModelObj.value
+        .initController(pathFiles));
+    await controllerVideo.initVideo(0);
   }
 
   @override
@@ -76,8 +94,9 @@ class _LibraryVideoDetailsScreenState extends State<LibraryVideoDetailsScreen> {
                                               Padding(
                                                   padding: getPadding(left: 16),
                                                   child: Text(
-                                                      "msg_h_i_ua_ghe_truy_n"
-                                                          .tr,
+                                                      widget.urls[index]
+                                                              .tenLeHoi ??
+                                                          "",
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -85,116 +104,39 @@ class _LibraryVideoDetailsScreenState extends State<LibraryVideoDetailsScreen> {
                                                           .txtSFProBold16WhiteA700
                                                           .copyWith(
                                                               height: 1.25))),
-                                              Align(
-                                                  alignment: Alignment.center,
-                                                  child: Container(
-                                                      width: getHorizontalSize(
-                                                          343.00),
-                                                      margin: getMargin(top: 8),
-                                                      child: RichText(
-                                                          text: TextSpan(
-                                                              children: [
-                                                                TextSpan(
-                                                                    text:
-                                                                        "msg_h_i_ua_ghe_truy_n3"
-                                                                            .tr,
-                                                                    style: TextStyle(
-                                                                        color: ColorConstant
-                                                                            .whiteA700Cc,
-                                                                        fontSize:
-                                                                            getFontSize(
-                                                                                14),
-                                                                        fontFamily:
-                                                                            'SF Pro',
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .w400,
-                                                                        height:
-                                                                            1.43)),
-                                                                TextSpan(
-                                                                    text: " ",
-                                                                    style: TextStyle(
-                                                                        color: ColorConstant
-                                                                            .whiteA700Cc,
-                                                                        fontSize:
-                                                                            getFontSize(
-                                                                                14),
-                                                                        fontFamily:
-                                                                            'SF Pro',
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .w400,
-                                                                        height:
-                                                                            1.43)),
-                                                                TextSpan(
-                                                                    text:
-                                                                        "lbl_h_i"
-                                                                            .tr,
-                                                                    style: TextStyle(
-                                                                        color: ColorConstant
-                                                                            .whiteA700Cc,
-                                                                        fontSize:
-                                                                            getFontSize(
-                                                                                14),
-                                                                        fontFamily:
-                                                                            'SF Pro',
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .w400,
-                                                                        height:
-                                                                            1.43)),
-                                                                TextSpan(
-                                                                    text: "lbl"
-                                                                        .tr,
-                                                                    style: TextStyle(
-                                                                        color: ColorConstant
-                                                                            .whiteA700Cc,
-                                                                        fontSize:
-                                                                            getFontSize(
-                                                                                14),
-                                                                        fontFamily:
-                                                                            'SF Pro',
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .w400,
-                                                                        height:
-                                                                            1.43)),
-                                                                TextSpan(
-                                                                    text:
-                                                                        "  ".tr,
-                                                                    style: TextStyle(
-                                                                        color: ColorConstant
-                                                                            .whiteA700Cc,
-                                                                        fontSize:
-                                                                            getFontSize(
-                                                                                14),
-                                                                        fontFamily:
-                                                                            'SF Pro',
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .w400,
-                                                                        height:
-                                                                            1.43)),
-                                                                TextSpan(
-                                                                    text:
-                                                                        "lbl_xem_th_m"
-                                                                            .tr,
-                                                                    style: TextStyle(
-                                                                        color: ColorConstant
-                                                                            .whiteA700,
-                                                                        fontSize:
-                                                                            getFontSize(
-                                                                                14),
-                                                                        fontFamily:
-                                                                            'SF Pro',
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .w500,
-                                                                        height:
-                                                                            1.43))
-                                                              ]),
-                                                          textAlign:
-                                                              TextAlign.left))),
+                                              Padding(
+                                                padding: getPadding(left: 16),
+                                                // alignment: Alignment.center,
+                                                child: ReadMoreText(
+                                                  widget.urls[index]
+                                                          .gioiThieu ??
+                                                      "",
+                                                  trimLines: 3,
+                                                  colorClickableText:
+                                                      ColorConstant.whiteA700,
+                                                  lessStyle: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.white,
+                                                  ),
+                                                  trimMode: TrimMode.Line,
+                                                  trimCollapsedText: 'Xem thêm',
+                                                  trimExpandedText: 'Thu gọn',
+                                                  style: TextStyle(
+                                                      color: ColorConstant
+                                                          .whiteA700,
+                                                      fontSize: getFontSize(14),
+                                                      fontFamily: 'SF Pro',
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height: 1.43),
+                                                  moreStyle: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
                                               Obx(() => SliderTheme(
                                                     data:
                                                         SliderTheme.of(context)

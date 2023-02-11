@@ -1,3 +1,5 @@
+import 'package:hue_festival/data/models/media/media_model.dart';
+import 'package:hue_festival/presentation/festival_app_map/bidings/festival_map_binding.dart';
 import 'package:hue_festival/presentation/splash_screen/splash_screen.dart';
 import 'package:hue_festival/presentation/splash_screen/binding/splash_binding.dart';
 import 'package:hue_festival/presentation/home_container_screen/home_container_screen.dart';
@@ -27,6 +29,7 @@ import 'package:hue_festival/presentation/app_navigation_screen/binding/app_navi
 import 'package:get/get.dart';
 
 import '../presentation/app_on_boarding/on_boarding_screen.dart';
+import '../presentation/festival_app_map/festival_app_map.dart';
 
 class AppRoutes {
   static const String splashScreen = '/splash_screen';
@@ -170,14 +173,19 @@ class AppRoutes {
     // ),
     GetPage(
       name: libraryPictureDetailsScreen,
-      page: () => LibraryPictureDetailsScreen(),
+      page: () => LibraryPictureDetailsScreen(
+        medias: MediaModel(),
+        listMediaModel: [],
+      ),
       bindings: [
         LibraryPictureDetailsBinding(),
       ],
     ),
     GetPage(
       name: libraryVideoDetailsScreen,
-      page: () => LibraryVideoDetailsScreen(),
+      page: () => LibraryVideoDetailsScreen(
+        urls: [],
+      ),
       bindings: [
         LibraryVideoDetailsBinding(),
       ],
@@ -223,7 +231,16 @@ class AppRoutes {
       bindings: [
         SplashBinding(),
       ],
+    ),
+
+    GetPage(
+      name: "/app_map",
+      page: () => FestivalMapScreen(),
+      bindings: [
+        FestivalMapBinding(),
+      ],
     )
   ];
 }
+//FestivalMapScreen
 //OnBoardingScreeen

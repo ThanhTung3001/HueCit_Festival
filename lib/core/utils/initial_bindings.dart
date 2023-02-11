@@ -1,5 +1,6 @@
 import 'package:hue_festival/core/app_export.dart';
 import 'package:hue_festival/data/apiClient/api_client.dart';
+import 'package:hue_festival/presentation/library_all_page/controller/library_all_controller.dart';
 import 'package:hue_festival/presentation/news_page/controller/news_controller.dart';
 
 import '../../presentation/festival_page/controller/festival_controller.dart';
@@ -13,5 +14,6 @@ class InitialBindings extends Bindings {
     Get.put(NetworkInfo(connectivity));
     Get.lazyPut(() => FestivalController());
     Get.put(() => NewsController);
+    Get.put(LibraryAllController);
   }
 }

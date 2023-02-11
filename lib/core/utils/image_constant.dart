@@ -120,4 +120,5 @@ class ImageConstant {
   static String onBoaring4 = 'assets/images/onboaring_4.jpeg'; //onboaring_3
   static String mapImg = 'assets/images/map_img.png'; //
   static String readMore = 'assets/images/read_more.svg'; //
+  static String locationImg = 'assets/images/imgLocation.png'; //
 }

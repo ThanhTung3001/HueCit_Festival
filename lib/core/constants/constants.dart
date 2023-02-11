@@ -11,4 +11,5 @@ class AppApi {
       "/api/APITinBai/v1/News/getListNewsbyCateID"; //&size=5&index=0
   static String eventUrl = "/API/CSDLLeHoi/SuKienApi/Gets"; //&size=5&index=0
   static String mediaUrl = '/API/CSDLLeHoi/MediaApi/Gets';
+  static String festivalLocation = "/API/CSDLLeHoi/DiaDiemLeHoiApi/Gets";
 }
