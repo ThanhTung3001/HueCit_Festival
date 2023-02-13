@@ -41,9 +41,19 @@ class FestivalMapScreen extends GetView<FestivalMapController> {
                       height: 100,
                       child: CarouselSlider(
                         carouselController: controller.carouselController.value,
-                        items: controller.festivalLocations.value
-                            .map((e) => ItemPositionBottom(name: e.diaDiem!))
-                            .toList(),
+                        // ignore: invalid_use_of_protected_member
+                        items: controller.festivalLocations.value.map(
+                          (e) {
+                            var timeStr = DateTime.parse(e.batDau!);
+                            var timeSet = timeStr.format("dd/MM/yyyy");
+                            return ItemPositionBottom(
+                              name: e.tenLeHoi!,
+                              location: e.diaDiem!,
+                              time: "Từ $timeSet",
+                              img: e.hinhAnh!.split(",")[0],
+                            );
+                          },
+                        ).toList(),
                         options: CarouselOptions(
                           onPageChanged: (controller.changePage),
                           enableInfiniteScroll: false,
@@ -167,7 +177,7 @@ class FestivalMapScreen extends GetView<FestivalMapController> {
               width: Get.width,
               radius: BorderRadius.circular(getHorizontalSize(8.00)),
               fit: BoxFit.cover,
-              imagePath: ImageConstant.imgAnh,
+              url: AppConstances.ENTRY_POINT + img!,
             ),
           ),
           SizedBox(
@@ -189,7 +199,7 @@ class FestivalMapScreen extends GetView<FestivalMapController> {
                           width: 4,
                         ),
                         Text(
-                          name,
+                          location!,
                           style: TextStyle(
                             fontFamily: "SP Pro",
                             fontWeight: FontWeight.w400,
@@ -203,7 +213,7 @@ class FestivalMapScreen extends GetView<FestivalMapController> {
                     padding: EdgeInsets.only(bottom: 4),
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      "Chương trình Countdown",
+                      name,
                       style: TextStyle(
                         fontSize: 14,
                         color: Color(0xff40090C),
@@ -215,7 +225,7 @@ class FestivalMapScreen extends GetView<FestivalMapController> {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      "Từ 31/12/2022",
+                      time!,
                       style: TextStyle(
                         fontSize: 14,
                         color: Color(0xff007543),

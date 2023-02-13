@@ -12,4 +12,5 @@ class AppApi {
   static String eventUrl = "/API/CSDLLeHoi/SuKienApi/Gets"; //&size=5&index=0
   static String mediaUrl = '/API/CSDLLeHoi/MediaApi/Gets';
   static String festivalLocation = "/API/CSDLLeHoi/DiaDiemLeHoiApi/Gets";
+  static String festivalMap = "/API/CSDLLeHoi/DanhSachLeHoiApi/GetsLeHoiMap";
 }

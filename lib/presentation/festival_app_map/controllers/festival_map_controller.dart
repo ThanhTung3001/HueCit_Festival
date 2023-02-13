@@ -7,8 +7,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hue_festival/core/app_export.dart';
 import 'package:hue_festival/core/utils/permisstion_app.dart';
 import 'package:hue_festival/data/apiClient/festival_location_client.dart';
-
-import '../../../data/models/festival/festiva_location_model.dart';
+import 'package:hue_festival/data/models/festival/festival_map_model.dart';
 
 class FestivalMapController extends GetxController {
   Rx<Completer<GoogleMapController>> googleMapController =
@@ -17,8 +16,7 @@ class FestivalMapController extends GetxController {
     target: LatLng(16.99, 15.88),
     zoom: 14.4746,
   ).obs;
-  RxList<FestivalLocationModel> festivalLocations =
-      RxList<FestivalLocationModel>();
+  RxList<MapFestival> festivalLocations = RxList<MapFestival>();
   Rx<bool> isLoaded = false.obs;
   RxSet<Marker> makers = RxSet<Marker>();
   Rx<int> selectIndex = 0.obs;
@@ -32,7 +30,7 @@ class FestivalMapController extends GetxController {
           target: LatLng(position!.latitude, position.longitude),
           zoom: 14.4746),
     );
-    var response = await FestivalLocatonClient().getFestivalLocation();
+    var response = await FestivalLocatonClient().getFestivalMap();
     festivalLocations(response);
 
     response.forEach((e) async {
