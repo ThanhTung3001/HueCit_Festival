@@ -1,0 +1,1 @@
+class Listanh1ItemModel {}

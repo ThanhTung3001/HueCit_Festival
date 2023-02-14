@@ -1,0 +1,58 @@
+name: hue_festival
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+dependencies: 
+  flutter: 
+    sdk: flutter
+  get: ^4.6.5
+  flutter_easyloading: ^3.0.5
+  connectivity_plus: 
+  shared_preferences: ^2.0.15
+  cached_network_image: ^3.2.1
+  flutter_svg: ^1.1.6
+  smooth_page_indicator: ^1.0.0+2
+  carousel_slider: ^4.0.0
+  intl: ^0.17.0
+  permission_handler: ^10.0.0
+  images_picker: ^1.2.11
+  group_button: ^5.2.2
+  #video_player: ^2.4.10
+  video_viewer: ^1.2.7
+  cached_video_player: ^2.0.3
+  video_compress: ^3.1.2
+  custom_radio_grouped_button: ^2.1.2+2
+  cupertino_radio_choice: ^1.0.2
+  lazy_load_scrollview: ^1.3.0
+  tuple: ^2.0.1
+  dio: ^4.0.6
+  paging: ^0.1.0
+  pull_to_refresh: ^2.0.0
+  infinite_scroll_pagination: ^3.2.0
+  skeletons: ^0.0.3
+  flutter_html: 
+  video_thumbnail:
+  path_provider: ^2.0.12
+  readmore: ^2.2.0
+  google_maps_flutter: ^2.2.3
+  geolocator: ^9.0.2
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Inter
+      fonts: 
+        - asset: assets/fonts/InterBold.ttf
+          weight: 700
+    - family: Be Vietnam Pro
+      fonts: 
+        - asset: assets/fonts/BeVietnamProBlack.ttf
+          weight: 900
+        - asset: assets/fonts/BeVietnamProRegular.ttf
+          weight: 400
